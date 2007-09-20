@@ -1,0 +1,26 @@
+=============================
+ StevenHarman-Zenburn-Extras
+=============================
+This file contains the following settings as exported from VisualStudio 2005 SP1.
+
+
+General Settings
+	Window Layouts
+Options
+	Environment
+		Fonts & Colors
+		Keyboard Shortcuts
+		Startup
+	TextEditor
+
+
+The Window Layouts are based off of the default VS settings. The Debugging view
+has been modified to be similar to the default Eclipse 3.x settings/locations.
+
+The Fonts & Colors are based off of the Zenburn settings but have been modified
+to include custom settings for Resharper 3.0 and some tweaks of my own.
+
+The Keyboard Shortcuts are based off of the default Resharper 2.5 and IntelliJ IDEA
+settings. I've added/changed several shortcuts to lower the friction even further.
+
+Startup is set to use the DotNetKicks RSS Feed rather than the default MSDN feed.
