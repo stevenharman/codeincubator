@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeInc.Commons", "CodeInc.Commons\CodeInc.Commons.csproj", "{F762D18C-9535-4146-B1BC-640676830150}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.CodeInc", "Tests.CodeInc\Tests.CodeInc.csproj", "{260CAE5A-221F-4787-9049-5B9393D7D3D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F762D18C-9535-4146-B1BC-640676830150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F762D18C-9535-4146-B1BC-640676830150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F762D18C-9535-4146-B1BC-640676830150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F762D18C-9535-4146-B1BC-640676830150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{260CAE5A-221F-4787-9049-5B9393D7D3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{260CAE5A-221F-4787-9049-5B9393D7D3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{260CAE5A-221F-4787-9049-5B9393D7D3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{260CAE5A-221F-4787-9049-5B9393D7D3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
