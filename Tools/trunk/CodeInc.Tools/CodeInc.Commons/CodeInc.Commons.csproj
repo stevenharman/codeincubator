@@ -60,7 +60,7 @@
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Testing\MbUnitSpecExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Testing\SpecBase.cs" />
+    <Compile Include="Testing\Specification.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
