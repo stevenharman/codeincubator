@@ -7,7 +7,7 @@ using Rhino.Mocks;
 
 namespace Tests.CodeInc.Commons.Extensions
 {
-    public class When_Executing_Each_On_IEnumerable_That_Is_Null : SpecBase
+    public class When_Executing_Each_On_IEnumerable_That_Is_Null : Specification
     {
         [Test]
         [ExpectedArgumentNullException]
@@ -22,7 +22,7 @@ namespace Tests.CodeInc.Commons.Extensions
         }
     }
 
-    public class When_Executing_Each_On_IEnumerable_That_Has_Items : SpecBase
+    public class When_Executing_Each_On_IEnumerable_That_Has_Items : Specification
     {
         [Test]
         public void Should_Executes_CodeBlock_On_Every_Item()

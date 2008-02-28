@@ -5,12 +5,28 @@ using Rhino.Mocks;
 namespace CodeInc.Commons.Testing
 {
     [TestFixture]
-    public class SpecBase
+    public class Specification
     {
         private MockRepository _mocks;
         public MockRepository Mocks
         {
             get { return _mocks; }
+        }
+
+        public IDisposable PlaybackOnly
+        {
+            get
+            {
+                using (Record)
+                {
+                }
+                return Playback;
+            }
+        }
+
+        public void BackToRecord(object mockObject)
+        {
+            Mocks.BackToRecord(mockObject);
         }
 
         public IDisposable Record
@@ -24,6 +40,11 @@ namespace CodeInc.Commons.Testing
         }
 
         public T Create<T>()
+        {
+            return Mocks.DynamicMock<T>();
+        }
+
+        public T CreateStrictMock<T>()
         {
             return Mocks.CreateMock<T>();
         }
