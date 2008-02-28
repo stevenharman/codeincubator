@@ -40,7 +40,7 @@ namespace MvcApplicationTest
                 controller.Recent();
             }
 
-            IList<Post> renderedPosts = (IList<Post>)controller.RenderedViewData;
+            IList<Post> renderedPosts = (IList<Post>) controller.RenderedViewData;
 
             renderedPosts.Count.ShouldEqual(2);
         }
@@ -75,7 +75,7 @@ namespace MvcApplicationTest
             public string SelectedView { get; private set; }
             public object RenderedViewData { get; private set; }
 
-            protected override void RenderView(string viewName, string masterName , object viewData)
+            protected override void RenderView(string viewName, string masterName, object viewData)
             {
                 this.SelectedView = viewName;
                 //I don't care about masterName at this point.
