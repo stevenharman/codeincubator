@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CodeInc.Commons.Extensions;
+using CodeInc.Commons.Testing;
 using MbUnit.Framework;
 using Rhino.Mocks;
 
@@ -27,7 +28,7 @@ namespace Tests.CodeInc.Commons.Extensions
         public void Should_Executes_CodeBlock_On_Every_Item()
         {
             ITestWidget myWidget = Create<ITestWidget>();
-            IEnumerable<ITestWidget> widgets = new ITestWidget[] { myWidget, myWidget, myWidget, myWidget, myWidget };
+            IEnumerable<ITestWidget> widgets = new[] { myWidget, myWidget, myWidget, myWidget, myWidget };
 
             using (Record)
             {
