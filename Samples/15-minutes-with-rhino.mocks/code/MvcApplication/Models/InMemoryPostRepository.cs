@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MvcApplication.Models
 {
@@ -12,12 +13,10 @@ namespace MvcApplication.Models
             posts.Add(post);
         }
 
-        public System.Collections.Generic.IList<Post> 
-            ListRecentPosts(int retrievalCount)
+        public IList<Post> ListRecentPosts(int retrievalCount)
         {
             if (retrievalCount < 0)
-                throw new ArgumentOutOfRangeException("retrievalCount"
-                    , "Let's be positive, ok?");
+                throw new ArgumentOutOfRangeException("retrievalCount", "Let's be positive, ok?");
 
             IList<Post> recent = new List<Post>();
             int recentIndex = posts.Count - 1;
@@ -28,6 +27,11 @@ namespace MvcApplication.Models
                 recent.Add(posts[recentIndex--]);
             }
             return recent;
+        }
+
+        public Post GetById(int id)
+        {
+            return posts.Where(p => p.Id == id).SingleOrDefault();
         }
 
         public static void Clear()

@@ -1,19 +1,14 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using MbUnit.Framework;
 
 namespace MvcApplicationTest.Controllers
 {
     /// <summary>
     /// Summary description for UnitTest1
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class HomeControllerTest
     {
-
-        [TestMethod]
+        [Test]
         public void About()
         {
             //
@@ -21,7 +16,7 @@ namespace MvcApplicationTest.Controllers
             //
         }
 
-        [TestMethod]
+        [Test]
         public void Index()
         {
             //
