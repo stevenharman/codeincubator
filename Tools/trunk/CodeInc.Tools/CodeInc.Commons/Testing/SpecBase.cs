@@ -2,7 +2,7 @@
 using MbUnit.Framework;
 using Rhino.Mocks;
 
-namespace Tests.CodeInc
+namespace CodeInc.Commons.Testing
 {
     [TestFixture]
     public class SpecBase
