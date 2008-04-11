@@ -38,24 +38,24 @@ namespace MvcDemoApp.Controllers
         public void Edit(int id)
         {
             Product viewData = repository.GetProductById(id);
-            RenderView("Edit", viewData);
+            RenderView("Edit", viewData); //Convention over configuration
         }
 
-        //public void Update(int id)
-        //{
-        //    try
-        //    {
-        //        AdventureWorksDataContext db = new AdventureWorksDataContext(@"Data Source=OBI-WAN\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=True");
-        //        Product viewData = db.Products.Single(p => p.ProductID == id);
-        //        BindingHelperExtensions.UpdateFrom(viewData, Request.Form);
-        //        db.SubmitChanges();
+        public void Update(int id)
+        {
+            try
+            {
+                AdventureWorksDataContext db = new AdventureWorksDataContext(@"Data Source=OBI-WAN\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=True");
+                Product viewData = db.Products.Single(p => p.ProductID == id);
+                BindingHelperExtensions.UpdateFrom(viewData, Request.Form);
+                db.SubmitChanges();
 
-        //        RedirectToAction("Products");
-        //    }
-        //    catch
-        //    {
-        //        RenderView("Edit", ViewData);
-        //    }
-        //}
+                RedirectToAction("Products");
+            }
+            catch
+            {
+                RenderView("Edit", ViewData);
+            }
+        }
     }
 }
