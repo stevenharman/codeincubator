@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Data;
-using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
 
 namespace MvcDemoApp.Models
 {
     public class ProductRepository : IProductRepository
     {
-        private AdventureWorksDataContext db = new AdventureWorksDataContext();
+        private NorthwindDataContext db = new NorthwindDataContext();
 
         public List<Product> GetTenProducts()
         {
-            return db.Products.Where(p => p.ListPrice > 0.0M).Take(10).ToList<Product>();
+            return db.Products.Take(10).ToList();
         }
 
         public Product GetProductById(int id)
         {
-            return db.Products.Single<Product>(p => p.ProductID == id);
+            return db.Products.Single(p => p.ProductID == id);
         }
     }
 }

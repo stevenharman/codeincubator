@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MbUnit.Core;
+﻿using System.Linq;
 using MbUnit.Framework;
 using Rhino.Mocks;
-using MvcDemoApp;
 using MvcDemoApp.Controllers;
 using MvcDemoApp.Models;
-using System.Web.Mvc;
 
 namespace MvcDemoAppTests.Controllers
 {
@@ -21,7 +15,7 @@ namespace MvcDemoAppTests.Controllers
             var mocks = new MockRepository();
             var repository = mocks.DynamicMock<IProductRepository>();
             ProductController controller;
-            
+
             using (mocks.Record())
             {
                 Expect.Call(repository.GetTenProducts()).Return(new[] { new Product() }.ToList());
@@ -51,7 +45,7 @@ namespace MvcDemoAppTests.Controllers
             using (mocks.Record())
             {
                 repository = mocks.CreateMock<IProductRepository>();
-                SetupResult.For(repository.GetProductById(7)).Return(new Product { Name = "Bingo", ProductID = 7, Color = "Blue" });
+                SetupResult.For(repository.GetProductById(7)).Return(new Product { ProductName = "Bingo", ProductID = 7, UnitsInStock = 12 });
 
                 controller = new ProductController(repository);
                 mocks.SetFakeControllerContext(controller);
