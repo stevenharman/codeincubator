@@ -25,19 +25,19 @@ namespace MvcDemoApp.Controllers
 
         public void Products()
         {
-            List<Product> viewData = repository.GetTenProducts();
+            var viewData = repository.GetTenProducts();
             RenderView("Products", viewData);
         }
 
         public void Index()
         {
-            List<Product> viewData = repository.GetTenProducts();
+            var viewData = repository.GetTenProducts();
             RenderView("Products", viewData);
         }
 
         public void Edit(int id)
         {
-            Product viewData = repository.GetProductById(id);
+            var viewData = repository.GetProductById(id);
             RenderView("Edit", viewData); //Convention over configuration
         }
 
@@ -45,8 +45,9 @@ namespace MvcDemoApp.Controllers
         {
             try
             {
-                AdventureWorksDataContext db = new AdventureWorksDataContext(@"Data Source=OBI-WAN\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=True");
-                Product viewData = db.Products.Single(p => p.ProductID == id);
+                var db = new NorthwindDataContext();
+
+                var viewData = db.Products.Single(p => p.ProductID == id);
                 BindingHelperExtensions.UpdateFrom(viewData, Request.Form);
                 db.SubmitChanges();
 
