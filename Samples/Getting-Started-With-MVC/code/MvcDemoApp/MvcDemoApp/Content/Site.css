@@ -263,3 +263,25 @@ ul#mainMenu li.selected a
 {
     clear: both;
 }
+
+#categoryList
+{
+	list-style-type: none;
+	float: left;
+	display: inline;	
+}
+
+.hide
+{
+	display: none;
+}
+
+#prodDetails
+{
+	float: left;
+	display: inline;
+	width: 500px;
+	height: auto;
+	margin: 10px 0 20px 0;
+	padding-bottom: 20px;
+}

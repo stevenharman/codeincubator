@@ -6,18 +6,21 @@
     <tr>
         <th>&nbsp;</th>
         <th>Product Name</th>
-        <th>Color</th>
+        <th>Units in Stock</th>
         <th>List Price</th>
     </tr>
-    <% foreach (MvcDemoApp.Models.Product p in ViewData)
+    <% foreach (var p in ViewData)
        { %>
     <tr>
         <td><%= Html.ActionLink("Edit", "Edit", new { id=p.ProductID } ) %></td>
-        <td><%= p.Name %></td>
-        <td><%= p.Color %></td>
-        <td>$<%= p.ListPrice.ToString("###,###.#0") %></td>
+        <td><%= p.ProductName %></td>
+        <td><%= p.UnitsInStock %></td>
+        <td>$<%= p.UnitPrice %></td>
     </tr>
     <% } %>
 </table>
 <br />
+<p>
+    <%= Html.ActionLink<ProductController>(c => c.Categories(), "Show Category Listing") %>
+</p>
 </asp:Content>
