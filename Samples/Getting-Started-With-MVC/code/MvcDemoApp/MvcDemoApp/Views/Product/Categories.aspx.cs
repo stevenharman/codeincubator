@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace MvcDemoApp.Views.Product
 {
-    public partial class Products : ViewPage< List<Models.Product> >
+    public partial class Categories : ViewPage<List<Models.Category>>
     {
     }
 }

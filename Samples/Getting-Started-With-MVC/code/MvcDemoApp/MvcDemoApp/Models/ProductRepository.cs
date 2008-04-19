@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace MvcDemoApp.Models
@@ -17,5 +16,16 @@ namespace MvcDemoApp.Models
         {
             return db.Products.Single(p => p.ProductID == id);
         }
+
+        public List<Category> GetAllProductCategories()
+        {
+            return db.Categories.ToList();
+        }
+
+        public List<Product> GetProductsByCategory(int categoryId)
+        {
+            return db.Products.Where(p => p.CategoryID == categoryId).ToList();
+        }
+
     }
 }

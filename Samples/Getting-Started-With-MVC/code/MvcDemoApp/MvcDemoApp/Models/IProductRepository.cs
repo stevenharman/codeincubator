@@ -6,5 +6,7 @@ namespace MvcDemoApp.Models
     {
         List<Product> GetTenProducts();
         Product GetProductById(int id);
+        List<Category> GetAllProductCategories();
+        List<Product> GetProductsByCategory(int categoryId);
     }
 }
