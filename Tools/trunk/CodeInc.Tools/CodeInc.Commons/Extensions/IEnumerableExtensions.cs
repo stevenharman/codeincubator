@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CodeInc.Commons.Extensions
 {
@@ -27,6 +28,11 @@ namespace CodeInc.Commons.Extensions
             {
                 action(item);
             }
+        }
+
+        public static bool IsEmpty<T>(this IEnumerable<T> items)
+        {
+            return items.Count() == 0;
         }
     }
 }
