@@ -12,7 +12,7 @@ namespace Tests.CodeInc.Commons.Extensions
     {
         private IEnumerable<ITestWidget> _widgets;
 
-        public override void Before_Each_Spec()
+        public override void before_each()
         {
             _widgets = null;
         }
@@ -66,7 +66,7 @@ namespace Tests.CodeInc.Commons.Extensions
         protected IEnumerable<ITestWidget> _widgets;
         protected ITestWidget _theWidget;
 
-        public override void Before_Each_Spec()
+        public override void before_each()
         {
             _theWidget = Create<ITestWidget>();
             _widgets = Enumerable.Repeat(_theWidget, 5);

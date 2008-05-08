@@ -54,20 +54,20 @@ namespace CodeInc.Commons.Testing
         {
             _mocks = new MockRepository();
 
-            Before_Each_Spec();
+            before_each();
         }
 
-        public virtual void Before_Each_Spec()
+        public virtual void before_each()
         {
         }
 
         [TearDown]
         public void Teardown()
         {
-            After_Each_Spec();
+            after_each();
         }
 
-        public virtual void After_Each_Spec()
+        public virtual void after_each()
         {
         }
     }
