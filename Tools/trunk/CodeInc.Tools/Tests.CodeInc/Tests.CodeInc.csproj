@@ -58,7 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commons\Extensions\IEnumerableSpec.cs" />
+    <Compile Include="Commons\Extensions\RangeExtensionTests.cs" />
+    <Compile Include="Commons\RangeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeInc.Commons\CodeInc.Commons.csproj">
