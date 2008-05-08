@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\AsyncExtensions.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Testing\MbUnitSpecExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
