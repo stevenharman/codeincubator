@@ -68,7 +68,7 @@ namespace Tests.CodeInc.Commons.Extensions
 
         public override void before_each()
         {
-            _theWidget = Create<ITestWidget>();
+            _theWidget = Mock<ITestWidget>();
             _widgets = Enumerable.Repeat(_theWidget, 5);
         }
     }

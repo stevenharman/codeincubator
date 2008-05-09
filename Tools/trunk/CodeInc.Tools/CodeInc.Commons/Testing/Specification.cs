@@ -13,17 +13,6 @@ namespace CodeInc.Commons.Testing
             get { return _mocks; }
         }
 
-        public IDisposable PlaybackOnly
-        {
-            get
-            {
-                using (Record)
-                {
-                }
-                return Playback;
-            }
-        }
-
         public void BackToRecord(object mockObject)
         {
             Mocks.BackToRecord(mockObject);
@@ -38,15 +27,31 @@ namespace CodeInc.Commons.Testing
         {
             get { return _mocks.Playback(); }
         }
+        
+        public IDisposable PlaybackOnly
+        {
+            get
+            {
+                using (Record)
+                {
+                }
+                return Playback;
+            }
+        }
 
-        public T Create<T>()
+        public T Mock<T>()
         {
             return Mocks.DynamicMock<T>();
         }
 
-        public T CreateStrictMock<T>()
+        public T StrictMock<T>()
         {
             return Mocks.CreateMock<T>();
+        }
+
+        public T Stub<T>()
+        {
+            return Mocks.Stub<T>();
         }
 
         [SetUp]
