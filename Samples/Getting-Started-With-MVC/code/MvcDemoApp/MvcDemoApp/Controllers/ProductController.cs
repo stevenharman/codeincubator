@@ -68,7 +68,10 @@ namespace MvcDemoApp.Controllers
         public void ProductsByCategory(int id)
         {
             var products = repository.GetProductsByCategory(id);
+
             Response.Write(MakeProductTable(products));
+            //RenderView("ProductTable", products);
+
         }
 
         #endregion

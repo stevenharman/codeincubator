@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MbUnit.Core;
-using MbUnit.Framework;
+﻿using MbUnit.Framework;
 using Rhino.Mocks;
 using MvcDemoApp;
-using MvcDemoApp.Controllers;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -21,11 +15,11 @@ namespace MvcDemoAppTests.Routes
         public void RouteDefaultsWork()
         {
             var app = new GlobalApplication();
-            RouteCollection routes = new RouteCollection();
+            var routes = new RouteCollection();
             GlobalApplication.RegisterRoutes(routes);
             Assert.GreaterThan(routes.Count, 0);
             
-            MockRepository mocks = new MockRepository();
+            var mocks = new MockRepository();
             HttpContextBase context;
 
             using (mocks.Record())
@@ -36,7 +30,7 @@ namespace MvcDemoAppTests.Routes
 
             using (mocks.Playback())
             {
-                RouteData routeData = routes.GetRouteData(context);
+                var routeData = routes.GetRouteData(context);
                 Assert.AreEqual("home", routeData.Values["controller"]);
                 Assert.AreEqual("Index", routeData.Values["action"]);
                 Assert.AreEqual(typeof(MvcRouteHandler), routeData.RouteHandler.GetType());

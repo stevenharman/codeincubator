@@ -8,10 +8,10 @@ namespace MvcDemoApp.Controllers
 {
     public class HomeController : Controller
     {
-        //public void Foo()
-        //{
-        //    //RenderView("Index");
-        //}
+        public void Foo()
+        {
+            RenderView("Index");
+        }
 
         
 
