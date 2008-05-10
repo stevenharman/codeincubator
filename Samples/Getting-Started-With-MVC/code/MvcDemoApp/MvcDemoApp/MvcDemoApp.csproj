@@ -114,6 +114,13 @@
     <Compile Include="Views\Product\Products.aspx.designer.cs">
       <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Product\ProductTable.aspx.cs">
+      <DependentUpon>ProductTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Product\ProductTable.aspx.designer.cs">
+      <DependentUpon>ProductTable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,6 +136,7 @@
     <Content Include="Views\Product\Categories.aspx" />
     <Content Include="Views\Product\Edit.aspx" />
     <Content Include="Views\Product\Products.aspx" />
+    <Content Include="Views\Product\ProductTable.aspx" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Home\About.aspx" />

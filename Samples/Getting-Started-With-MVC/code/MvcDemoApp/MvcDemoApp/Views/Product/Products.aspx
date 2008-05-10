@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="MvcDemoApp.Views.Product.Products" %>
+<%@ Import Namespace="MvcDemoApp.Models"%>
 <%@ Import Namespace="MvcDemoApp.Controllers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <h2>Products</h2>
@@ -13,6 +14,7 @@
        { %>
     <tr>
         <td><%= Html.ActionLink("Edit", "Edit", new { id=p.ProductID } ) %></td>
+        <td><%= Html.ActionLink<ProductController>(c => c.Edit(p.ProductID), "Edit lamda")  %></td>        
         <td><%= p.ProductName %></td>
         <td><%= p.UnitsInStock %></td>
         <td>$<%= p.UnitPrice %></td>

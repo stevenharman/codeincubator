@@ -14,26 +14,26 @@ namespace MvcDemoAppTests.Controllers
     [TestFixture]
     public class HomeControllerTests
     {
-        //[Test]
-        //public void FooSetsCorrectView()
-        //{
-        //    HomeController controller = new HomeController();
-        //    var fakeViewEngine = new FakeViewEngine();
-        //    controller.ViewEngine = fakeViewEngine;
+        [Test]
+        public void FooSetsCorrectView()
+        {
+            HomeController controller = new HomeController();
+            var fakeViewEngine = new FakeViewEngine();
+            controller.ViewEngine = fakeViewEngine;
 
-        //    MockRepository mocks = new MockRepository();
+            MockRepository mocks = new MockRepository();
 
-        //    using (mocks.Record())
-        //    {
-        //        mocks.SetFakeControllerContext(controller);
-        //    }
+            using (mocks.Record())
+            {
+                mocks.SetFakeControllerContext(controller);
+            }
 
-        //    using (mocks.Playback())
-        //    {
-        //        controller.Foo();
-        //        Assert.AreEqual("Index", fakeViewEngine.ViewContext.ViewName);
-        //    }
-        //}
+            using (mocks.Playback())
+            {
+                controller.Foo();
+                Assert.AreEqual("Index", fakeViewEngine.ViewContext.ViewName);
+            }
+        }
 
         [Test]
         public void About()
