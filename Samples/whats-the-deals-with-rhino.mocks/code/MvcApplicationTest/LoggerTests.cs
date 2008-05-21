@@ -12,7 +12,7 @@ namespace MvcApplicationTest
         public void LogTest()
         {
             var mocks = new MockRepository();
-            Logger logger = mocks.CreateMock<Logger>();
+            var logger = mocks.CreateMock<Logger>();
 
             using (mocks.Record())
             {
