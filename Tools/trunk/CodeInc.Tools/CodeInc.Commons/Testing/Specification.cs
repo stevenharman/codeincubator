@@ -54,6 +54,11 @@ namespace CodeInc.Commons.Testing
             return Mocks.Stub<T>();
         }
 
+        public T PartialMock<T>(params object[] argumentsForConstructor) where T : class
+        {
+            return Mocks.PartialMock<T>(argumentsForConstructor);
+        }
+
         [SetUp]
         public void Setup()
         {
