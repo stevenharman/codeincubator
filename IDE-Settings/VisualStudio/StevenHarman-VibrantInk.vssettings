@@ -223,7 +223,7 @@
 					<Category GUID="{A27B4E24-A735-4D1D-B8E7-9716E1E3D8E0}" FontName="Consolas" FontSize="10" CharSet="0" FontIsDefault="No">
 						<Items>
 							<Item Name="Plain Text" Foreground="0x00FFFFFF" Background="0x000F0F0F" BoldFont="No"/>
-							<Item Name="Selected Text" Foreground="0x00686783" Background="0x00800000" BoldFont="No"/>
+							<Item Name="Selected Text" Foreground="0x02000000" Background="0x00EA7500" BoldFont="No"/>
 							<Item Name="Inactive Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Indicator Margin" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Line Numbers" Foreground="0x00AF912B" Background="0x02000000" BoldFont="No"/>
@@ -290,6 +290,8 @@
 							<Item Name="Register Data" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Register NAT" Foreground="0x0100000A" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Current Line" Foreground="0x02000000" Background="0x00202020" BoldFont="No"/>
+							<Item Name="ReSharper Matched Brace" Foreground="0x00202020" Background="0x00FFFF00" BoldFont="No"/>
+							<Item Name="ReSharper Mutable Local Variable Identifier" Foreground="0x02000000" Background="0x02000000" BoldFont="Yes"/>
 							<Item Name="ReSharper Todo Item" Foreground="0x00CC3399" Background="0x02000000" BoldFont="Yes"/>
 							<Item Name="Smart Tag" Foreground="0x0100000F" Background="0x02000000" BoldFont="No"/>
 							<Item Name="SQL DML Marker" Foreground="0x0100000F" Background="0x02000000" BoldFont="No"/>
