@@ -290,8 +290,11 @@
 							<Item Name="Register Data" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Register NAT" Foreground="0x0100000A" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Current Line" Foreground="0x02000000" Background="0x00202020" BoldFont="No"/>
+							<Item Name="ReSharper LiveTemplates Inactive HotSpot" Foreground="0x00202020" Background="0x00AAE8EE" BoldFont="No"/>
 							<Item Name="ReSharper Matched Brace" Foreground="0x00202020" Background="0x00FFFF00" BoldFont="No"/>
 							<Item Name="ReSharper Mutable Local Variable Identifier" Foreground="0x02000000" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="ReSharper Namespace Identifier" Foreground="0x00FF0000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Template Editor Template Keyword" Foreground="0x000080FF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Todo Item" Foreground="0x00CC3399" Background="0x02000000" BoldFont="Yes"/>
 							<Item Name="Smart Tag" Foreground="0x0100000F" Background="0x02000000" BoldFont="No"/>
 							<Item Name="SQL DML Marker" Foreground="0x0100000F" Background="0x02000000" BoldFont="No"/>
