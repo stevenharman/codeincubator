@@ -6,7 +6,8 @@ using MbUnit.Framework;
 namespace Tests.CodeInc.Commons.Extensions
 {
     [TestFixture]
-    public class when_left_range_is_completely_before_right : RangeExtensionSpecification
+    public class when_left_range_is_completely_before_the_right 
+        : behaves_like_context_having_two_ranges
     {
         public override void before_each()
         {
@@ -22,7 +23,25 @@ namespace Tests.CodeInc.Commons.Extensions
     }
 
     [TestFixture]
-    public class when_both_ranges_have_same_start : RangeExtensionSpecification
+    public class when_right_starts_during_the_left_range 
+        : behaves_like_context_having_two_ranges
+    {
+        public override void before_each()
+        {
+            _left = new Range<int>(RandNegative, SpecHelper.RandomInt(100));
+            _right = new Range<int>(_left.End - 1, SpecHelper.RandomInt(101, 9999));
+        }
+
+        [Test]
+        public void then_should_be_overlap()
+        {
+            _left.Overlaps(_right).ShouldBeTrue();
+        }
+    }
+
+    [TestFixture]
+    public class when_both_ranges_have_the_same_start 
+        : behaves_like_context_having_two_ranges
     {
         public override void before_each()
         {
@@ -38,7 +57,8 @@ namespace Tests.CodeInc.Commons.Extensions
     }
 
     [TestFixture]
-    public class when_left_range_starts_after_the_right_starts : RangeExtensionSpecification
+    public class when_left_range_starts_during_the_right_range 
+        : behaves_like_context_having_two_ranges
     {
         public override void before_each()
         {
@@ -46,37 +66,40 @@ namespace Tests.CodeInc.Commons.Extensions
         }
 
         [Test]
-        public void and_before_right_ends_then_should_overlap()
+        public void and_ends_before_right_ends_then_should_overlap() // left is completely w/in the right
         {
-            _left = new Range<int>(_right.Start + 1, SpecHelper.RandomInt(251, 9999));
+            _left = new Range<int>(_right.Start + 1, SpecHelper.RandomInt(102, 499));
 
             _left.Overlaps(_right).ShouldBeTrue();
+        }
+
+        [Test]
+        public void and_ends_after_the_right_ends_then_should_overlap() // start within right, but end after the right
+        {
+            _left = new Range<int>(_right.Start + 1, SpecHelper.RandomInt(501, 999));
+
+            _left.Overlaps(_right).ShouldBeTrue();
+        }
+    }
+
+    [TestFixture]
+    public class when_left_range_is_completely_after_the_right 
+        : behaves_like_context_having_two_ranges
+    {
+        public override void before_each()
+        {
+            _right = new Range<int>(100, 500);
+            _left = new Range<int>(_right.End + 1, _right.End + 5);
         }
 
         [Test]
         public void and_after_right_ends_then_should_not_overlap()
         {
-            _left = new Range<int>(_right.End + 1, _right.End + 2);
+            _left.Overlaps(_right).ShouldBeFalse();
         }
     }
 
-    [TestFixture]
-    public class when_right_starts_before_left_ends : RangeExtensionSpecification
-    {
-        public override void before_each()
-        {
-            _left = new Range<int>(RandNegative, SpecHelper.RandomInt(100));
-            _right = new Range<int>(_left.End - 1, SpecHelper.RandomInt(101, 9999));
-        }
-
-        [Test]
-        public void then_should_be_overlap()
-        {
-            _left.Overlaps(_right).ShouldBeTrue();
-        }
-    }
-
-    public class RangeExtensionSpecification : Specification
+    public class behaves_like_context_having_two_ranges : Specification
     {
         protected Range<int> _left;
         protected Range<int> _right;
@@ -88,7 +111,7 @@ namespace Tests.CodeInc.Commons.Extensions
 
         protected static int RandNegative
         {
-            get { return -1 * RandPositive; }
+            get { return -1*RandPositive; }
         }
     }
 }
