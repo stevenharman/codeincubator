@@ -8,6 +8,7 @@ using Rhino.Mocks;
 
 namespace Tests.CodeInc.Commons.Extensions
 {
+    [TestFixture]
     public class when_executing_Each_on_IEnumerable_that_is_null : Specification
     {
         private IEnumerable<ITestWidget> _widgets;
@@ -28,6 +29,7 @@ namespace Tests.CodeInc.Commons.Extensions
         }
     }
 
+    [TestFixture]
     public class when_executing_Each_on_IEnumerable_that_has_items 
         : behaves_like_context_where_IEnumerable_has_items
     {
@@ -50,6 +52,7 @@ namespace Tests.CodeInc.Commons.Extensions
         }
     }
 
+    [TestFixture]
     public class when_checking_if_IEnumerable_is_empty
         : behaves_like_context_where_IEnumerable_has_items
     {
