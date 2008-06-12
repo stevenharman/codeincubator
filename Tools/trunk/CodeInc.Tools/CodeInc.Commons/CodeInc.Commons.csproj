@@ -43,6 +43,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ExternalDependencies\Rhino.Mocks.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap, Version=2.5.0.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ExternalDependencies\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -60,6 +64,7 @@
     <Compile Include="Extensions\AsyncExtensions.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\RangeExtensions.cs" />
+    <Compile Include="Extensions\StructureMap\RegistryExtensions.cs" />
     <Compile Include="Range.cs" />
     <Compile Include="Testing\MbUnitSpecExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
