@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using MbUnit.Framework;
 using Rhino.Mocks;
 
@@ -79,6 +80,18 @@ namespace CodeInc.Commons.Testing
 
         public virtual void after_each()
         {
+        }
+        
+        protected void spec_not_implemented()
+        {
+            var caller = new StackTrace().GetFrame(1).GetMethod();
+            
+            spec_not_implemented(caller.DeclaringType.Name + "." + caller.Name);
+        }
+        
+        protected void spec_not_implemented(string specName)
+        {
+            Console.WriteLine("Specification not implemented : " + specName);
         }
     }
 }
