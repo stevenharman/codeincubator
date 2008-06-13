@@ -13,7 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="3" />
+        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="3" AsyncPostBackErrorMessage="Error!" />
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div>
