@@ -9,7 +9,7 @@
     </Variables>
     <CustomProperties />
   </Template>
-  <Template uid="4f6dcc61-511a-4346-91c6-c0bf7a5cb097" text="SetupResult.For($methodToInvoke$).Return($result$)" shortcut="sr" description="SetupResult - A Rhino.Mocks expectation" reformat="true" shortenQualifiedReferences="true">
+  <Template uid="4f6dcc61-511a-4346-91c6-c0bf7a5cb097" text="SetupResult.For($methodToInvoke$).Return($result$)$END$" shortcut="sr" description="SetupResult - A Rhino.Mocks expectation" reformat="true" shortenQualifiedReferences="true">
     <Context>
       <CSharpContext context="Expression" minimumLanguageVersion="2.0" />
     </Context>
