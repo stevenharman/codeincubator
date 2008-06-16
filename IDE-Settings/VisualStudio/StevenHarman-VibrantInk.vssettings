@@ -283,8 +283,8 @@
 							<Item Name="Operator" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Other Error" Foreground="0x00951795" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Preprocessor Keyword" Foreground="0x003248DA" Background="0x02000000" BoldFont="Yes"/>
-							<Item Name="Read-Only Region" Foreground="0x01000002" Background="0x00E6EFEE" BoldFont="Yes"/>
-							<Item Name="Refactoring Background" Foreground="0x01000002" Background="0x00E6EFEE" BoldFont="Yes"/>
+							<Item Name="Read-Only Region" Foreground="0x01000002" Background="0x00797979" BoldFont="Yes"/>
+							<Item Name="Refactoring Background" Foreground="0x01000002" Background="0x00B0CCC9" BoldFont="Yes"/>
 							<Item Name="Refactoring Current Field" Foreground="0x02000000" Background="0x00B4E4B4" BoldFont="No"/>
 							<Item Name="Refactoring Dependent Field" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Register Data" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
@@ -299,7 +299,7 @@
 							<Item Name="Smart Tag" Foreground="0x0100000F" Background="0x02000000" BoldFont="No"/>
 							<Item Name="SQL DML Marker" Foreground="0x0100000F" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Stale Code" Foreground="0x00C0C0C0" Background="0x02000000" BoldFont="Yes"/>
-							<Item Name="String" Foreground="0x005CC2A5" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="String" Foreground="0x0043C286" Background="0x02000000" BoldFont="Yes"/>
 							<Item Name="Syntax Error" Foreground="0x0100000C" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Task List Shortcut" Foreground="0x00FFFFFF" Background="0x0100000F" BoldFont="Yes"/>
 							<Item Name="Tracepoint (Disabled)" Foreground="0x00FFFFFF" Background="0x00463A96" BoldFont="No"/>
