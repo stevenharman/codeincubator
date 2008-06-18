@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commons\DateRangeTests.cs" />
     <Compile Include="Commons\Extensions\IEnumerableExtensionsTests.cs" />
     <Compile Include="Commons\Extensions\RangeExtensionsTests.cs" />
     <Compile Include="Commons\Extensions\StructureMap\RegistryExtensionsTests.cs" />
