@@ -13,11 +13,14 @@
 
         <div id="header">
             <p id="logo">
-                <a href="">My Sample MVC Application</a>
+                <a href="">The MVC Beer App</a>
             </p>
             <ul id="menu">
                 <li>
                     <%= Html.ActionLink("Home", "Index", "Home")%>
+                </li>
+                <li>
+                    <%= Html.ActionLink("Beer List", "Index", "Beer") %>
                 </li>
                 <li>
                     <%= Html.ActionLink("About Us", "About", "Home")%>
@@ -33,7 +36,7 @@
             </div>
             <div id="footer">
                 <p>
-                    My Sample MVC Application &copy; Copyright 2008
+                    The MVC Beer App &copy; Copyright 2008
                 </p>
             </div>
         </div>

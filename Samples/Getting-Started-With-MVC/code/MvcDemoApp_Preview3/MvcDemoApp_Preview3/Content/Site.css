@@ -1,11 +1,21 @@
-﻿/*----------------------------------------------------------
-The base color for this template is #5c87b2. If you'd like
+﻿/*
+
+f4b430 - light tan
+965008 - brown
+b15a2d - reddish brown
+5f6c5b - blue gray
+cb8700 - dark tan
+
+*/
+
+/*----------------------------------------------------------
+The base color for this template is #965008. If you'd like
 to use a different color start by replacing all instances of
-#5c87b2 with your new color.
+#965008 with your new color.
 ----------------------------------------------------------*/
 body
 {
-    background-color: #5c87b2;
+    background-color: #965008;
     font-size: .75em;
     font-family: Verdana, Helvetica, Sans-Serif;
     margin: 0;
@@ -43,7 +53,7 @@ p, ul
 h1, h2, h3, h4, h5, h6
 {
     font-size: 1.5em;
-    color: #000;
+    color: #cb8700;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -130,6 +140,7 @@ p#logo, h1#logo
     padding: 5px 0 0 0;
     text-align: center;
     line-height: normal;
+    clear: both;
 }
 
 #footer p
@@ -139,11 +150,34 @@ p#logo, h1#logo
     font-size: .9em;
 }
 
+#gridColumn
+{
+	width: 280px;
+	margin-right: 30px;
+	float: left;
+	display: inline;
+}
+
+#detailColumn
+{
+	width: 360px;
+	float: left;
+	display: inline;
+}
+
+#beerDetail
+{
+	clear: both;
+	width: 360px;
+	height: 240px;
+	overflow: auto;
+}
+
 /* TAB MENU   
 ----------------------------------------------------------*/
 ul#menu
 {
-    border-bottom: 1px #5C87B2 solid;
+    border-bottom: 1px #965008 solid;
     padding: 0 0 2px;
     position: relative;
     margin: 0;
@@ -158,12 +192,12 @@ ul#menu li
 
 ul#menu li a
 {
-    padding: 10px 20px;
+    padding: 6px 20px;
     font-weight: bold;
     text-decoration: none;
-    line-height: 2.8em;
-    background-color: #e8eef4;
-    color: #034af3;
+    line-height: 2.4em;
+    background-color: #f4b430;
+    color: #b15a2d;
 }
 
 ul#menu li a:hover
@@ -174,7 +208,7 @@ ul#menu li a:hover
 
 ul#menu li a:active
 {
-    background-color: #a6e2a6;
+    background-color: #cb8700;
     text-decoration: none;
 }
 
@@ -189,4 +223,24 @@ ul#menu li.selected a
 .clear
 {
     clear: both;
+}
+
+.beerGrid
+{
+	width: 280px;
+	margin: 20px 0 20px 0;
+	border-bottom: solid 1px #333;
+}
+
+.beerGrid TD, .beerGrid TH
+{
+	border-top: solid 1px #ccc;
+	border-right: solid 1px #ccc;
+	padding: 4px;
+}
+
+.beerGrid TD.first, .beerGrid TH.first
+{
+	border-left: solid 1px #ccc;
+	width: 24px;
 }

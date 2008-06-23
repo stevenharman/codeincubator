@@ -73,8 +73,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BeerControllerSpec.cs" />
     <Compile Include="Controllers\HomeControllerSpec.cs" />
     <Compile Include="MbUnitSpecExtensions.cs" />
+    <Compile Include="ModelSpecs\UtilityMethodSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specification.cs" />
   </ItemGroup>

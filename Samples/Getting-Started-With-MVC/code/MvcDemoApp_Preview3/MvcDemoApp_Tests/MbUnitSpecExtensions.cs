@@ -101,23 +101,23 @@ namespace MvcDemoApp_Tests
 
         public static void ShouldContain(this string actual, string expected)
         {
-            StringAssert.Contains(expected, actual);
+            StringAssert.Contains(actual, expected);
         }
 
         public static string ShouldBeEqualIgnoringCase(this string actual, string expected)
         {
-            StringAssert.AreEqualIgnoreCase(expected, actual);
+            StringAssert.AreEqualIgnoreCase(actual, expected);
             return expected;
         }
 
         public static void ShouldEndWith(this string actual, string expected)
         {
-            StringAssert.EndsWith(expected, actual);
+            StringAssert.EndsWith(actual, expected);
         }
 
         public static void ShouldStartWith(this string actual, string expected)
         {
-            StringAssert.StartsWith(expected, actual);
+            StringAssert.StartsWith(actual, expected);
         }
 
         public static void ShouldContainErrorMessage(this Exception exception, string expected)
