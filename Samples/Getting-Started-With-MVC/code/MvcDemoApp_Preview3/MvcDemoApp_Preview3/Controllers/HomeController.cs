@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace MvcDemoApp_Preview3.Controllers
 {
@@ -12,7 +8,6 @@ namespace MvcDemoApp_Preview3.Controllers
         {
             ViewData["Title"] = "Home Page";
             ViewData["Message"] = "Welcome to ASP.NET MVC!";
-
             return View();
         }
 

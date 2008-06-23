@@ -69,8 +69,8 @@ namespace MvcDemoApp.Controllers
         {
             var products = repository.GetProductsByCategory(id);
 
-            Response.Write(MakeProductTable(products));
-            //RenderView("ProductTable", products);
+            //Response.Write(MakeProductTable(products));
+            RenderView("ProductTable", products);
 
         }
 
