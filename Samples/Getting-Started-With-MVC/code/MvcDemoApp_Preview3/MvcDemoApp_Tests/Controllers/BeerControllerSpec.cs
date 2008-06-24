@@ -91,7 +91,7 @@ namespace MvcDemoApp_Tests.Controllers
         {
             _repository = Mock<IBeerRepository>();
             _controller = new BeerController(_repository);
-            _repository.Expect(b => b.GetBeerById(1)).IgnoreArguments().Return(new Beer());
+            _repository.Stub(b => b.GetBeerById(1)).IgnoreArguments().Return(new Beer());
 
             _result = _controller.BeerDetail(1) as ViewResult;
             _viewData = _result.ViewData;
@@ -107,6 +107,7 @@ namespace MvcDemoApp_Tests.Controllers
         public void then_should_verify_view_model_is_of_type_beer()
         {
             _viewData.Model.ShouldBeOfType(typeof(Beer));
+            //_repository.AssertWasCalled(b => b.GetBeerById(1), o => o.IgnoreArugments()); //TODO: do same below
         }
     }
 
