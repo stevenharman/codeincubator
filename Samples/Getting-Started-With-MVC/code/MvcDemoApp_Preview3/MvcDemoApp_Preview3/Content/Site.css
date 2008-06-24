@@ -244,3 +244,9 @@ ul#menu li.selected a
 	border-left: solid 1px #ccc;
 	width: 24px;
 }
+
+.beerlist
+{
+	list-style-type: none;
+	margin-left: 16px;
+}
