@@ -23,5 +23,15 @@ namespace MvcDemoApp_Preview3.Models
 
             return db.Beers.OrderBy(b =>b.Name).Skip(numberToSkip).Take(numPerPage).ToList();
         }
+
+        public IList<BeerType> GetAllBeerTypes()
+        {
+            return db.BeerTypes.OrderBy(t => t.Name).ToList();
+        }
+
+        public IList<Brewery> GetAllBreweries()
+        {
+            return db.Breweries.OrderBy(b => b.Name).ToList();
+        }
     }
 }
