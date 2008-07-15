@@ -14,8 +14,6 @@ namespace ContextInterfaceGenerator
             string dbmlFile = args[0];
             string outputFile = args[1];
 
-            //string dbmlFile = @"C:\Phoenix\trunk\BUSINESS\VRS.VCS.Business\Vcs.dbml";
-
             if (!File.Exists(dbmlFile))
                 throw new ApplicationException("Invalid dbml file specified.");
 
