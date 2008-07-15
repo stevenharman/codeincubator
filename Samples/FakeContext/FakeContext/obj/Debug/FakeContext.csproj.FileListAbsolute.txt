@@ -1,0 +1,11 @@
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\FakeContext\FakeContext\bin\Debug\FakeContext.dll.config
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\FakeContext\FakeContext\bin\Debug\FakeContext.dll
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\FakeContext\FakeContext\bin\Debug\FakeContext.pdb
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\FakeContext\FakeContext\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\FakeContext\FakeContext\obj\Debug\FakeContext.dll
+C:\Users\kscott\Documents\Visual Studio 2008\Projects\FakeContext\FakeContext\obj\Debug\FakeContext.pdb
+C:\Projects\FakeContext\FakeContext\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\FakeContext\FakeContext\obj\Debug\FakeContext.dll
+C:\Projects\FakeContext\FakeContext\obj\Debug\FakeContext.pdb
+C:\Projects\FakeContext\FakeContext\bin\Debug\FakeContext.dll
+C:\Projects\FakeContext\FakeContext\bin\Debug\FakeContext.pdb
