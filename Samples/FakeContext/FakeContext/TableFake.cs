@@ -162,7 +162,7 @@ namespace FakeContext
 
         public void AttachAll<TSubEntity>(IEnumerable<TSubEntity> entities) where TSubEntity : TEntity
         {
-            foreach (var entity in entities)
+            foreach (var entity in entities.ToList())
                 Attach(entity);
         }
 
@@ -173,7 +173,7 @@ namespace FakeContext
 
         public void DeleteAllOnSubmit<TSubEntity>(IEnumerable<TSubEntity> entities) where TSubEntity : TEntity
         {
-            foreach (var entity in entities)
+            foreach (var entity in entities.ToList())
                 DeleteOnSubmit(entity);
         }
 
@@ -199,7 +199,7 @@ namespace FakeContext
 
         public void InsertAllOnSubmit<TSubEntity>(IEnumerable<TSubEntity> entities) where TSubEntity : TEntity
         {
-            foreach (var entity in entities)
+            foreach (var entity in entities.ToList())
                 Attach(entity);
         }
 
