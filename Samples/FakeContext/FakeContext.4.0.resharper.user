@@ -1,0 +1,152 @@
+<Configuration>
+  <UnitTestRunner>
+    <CustomStartDirectory>
+    </CustomStartDirectory>
+    <UseShadowCopy>True</UseShadowCopy>
+    <UseCustomFolder>False</UseCustomFolder>
+    <EnableUnitTesting>True</EnableUnitTesting>
+    <Providers />
+  </UnitTestRunner>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:TempContext.designer.cs" caret="859" scrollPosition="0|60" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="12526" scrollPosition="0|21" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:Specification.cs" caret="170" scrollPosition="0|6" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:TestExtensions.cs" caret="150" scrollPosition="0|0" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:FakeTableTest.cs" caret="1084" scrollPosition="0|10" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="10101" scrollPosition="0|137" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="10216" scrollPosition="0|147" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="10356" scrollPosition="0|147" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="10449" scrollPosition="0|159" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="10540" scrollPosition="0|159" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="10637" scrollPosition="0|168" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="10738" scrollPosition="0|168" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="10823" scrollPosition="0|189" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="10957" scrollPosition="0|189" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="11074" scrollPosition="0|189" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="11457" scrollPosition="0|195" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="11278" scrollPosition="0|201" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="11679" scrollPosition="0|201" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="11796" scrollPosition="0|207" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="11937" scrollPosition="0|216" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="12067" scrollPosition="0|216" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="12184" scrollPosition="0|225" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="12501" scrollPosition="0|231" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="12396" scrollPosition="0|231" />
+      <File id="87D21F4A-A17E-40EF-88AA-353E30BCB2C2/f:Class1.cs" caret="931" scrollPosition="0|21" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:Specification.cs" caret="431" scrollPosition="0|6" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:Specification.cs" caret="598" scrollPosition="0|6" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:Specification.cs" caret="487" scrollPosition="0|6" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:Specification.cs" caret="352" scrollPosition="0|6" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:Specification.cs" caret="263" scrollPosition="0|6" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:FakeTableTest.cs" caret="1180" scrollPosition="0|0" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:FakeTableTest.cs" caret="488" scrollPosition="0|6" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:TestExtensions.cs" caret="8925" scrollPosition="0|231" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:TestExtensions.cs" caret="177" scrollPosition="0|0" />
+      <File id="33F9AD60-DEEA-4D31-B2BD-AD672477E6EC/f:FakeTableTest.cs" caret="1084" scrollPosition="0|10" />
+    </RecentEdits>
+  </RecentFiles>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+      <setting name="UseSolutionBuilder">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="15" />
+      <Item value="DataContextProxy" priority="0" />
+      <Item value="Bank_Account" priority="0" />
+      <Item value="return" priority="26" />
+      <Item value="ContextBoundObject" priority="0" />
+      <Item value="private" priority="3" />
+      <Item value="TempContextDataContext" priority="0" />
+      <Item value="_context" priority="1" />
+      <Item value="context" priority="0" />
+      <Item value="Bank_Accounts" priority="0" />
+      <Item value="interface" priority="0" />
+      <Item value="TEntity" priority="14" />
+      <Item value="where" priority="1" />
+      <Item value="ITable" priority="2" />
+      <Item value="string" priority="2" />
+      <Item value="DataContext" priority="0" />
+      <Item value="bool" priority="0" />
+      <Item value="TableProxy" priority="1" />
+      <Item value="Table" priority="1" />
+      <Item value="_table" priority="12" />
+      <Item value="table" priority="0" />
+      <Item value="entity" priority="7" />
+      <Item value="asModified" priority="3" />
+      <Item value="Attach" priority="9" />
+      <Item value="InsertAllOnSubmit" priority="0" />
+      <Item value="InsertOnSubmit" priority="0" />
+      <Item value="as" priority="1" />
+      <Item value="AttachAll" priority="4" />
+      <Item value="entities" priority="4" />
+      <Item value="DeleteOnSubmit" priority="2" />
+      <Item value="DeleteAllOnSubmit" priority="0" />
+      <Item value="GetOriginalEntityState" priority="0" />
+      <Item value="GetModifiedMembers" priority="0" />
+      <Item value="ElementType" priority="0" />
+      <Item value="IQueryProvider" priority="0" />
+      <Item value="CreateQuery" priority="1" />
+      <Item value="expression" priority="0" />
+      <Item value="TElement" priority="1" />
+      <Item value="Execute" priority="1" />
+      <Item value="TResult" priority="1" />
+      <Item value="IListSource" priority="0" />
+      <Item value="ContainsListCollection" priority="0" />
+      <Item value="Bank_Detail" priority="0" />
+      <Item value="Bank_Location" priority="0" />
+      <Item value="class" priority="1" />
+      <Item value="IEnumerable" priority="0" />
+      <Item value="readonly" priority="0" />
+      <Item value="IList" priority="1" />
+      <Item value="_entities" priority="12" />
+      <Item value="GetEnumerator" priority="0" />
+      <Item value="AsQueryable" priority="0" />
+      <Item value="null" priority="0" />
+      <Item value="Provider" priority="0" />
+      <Item value="Add" priority="1" />
+      <Item value="if" priority="1" />
+      <Item value="is" priority="0" />
+      <Item value="IFormatProvider" priority="0" />
+      <Item value="item" priority="1" />
+      <Item value="Remove" priority="2" />
+      <Item value="foreach" priority="4" />
+      <Item value="var" priority="5" />
+      <Item value="in" priority="4" />
+      <Item value="OfType" priority="1" />
+      <Item value="Contains" priority="1" />
+      <Item value="new" priority="8" />
+      <Item value="ModifiedMemberInfo" priority="1" />
+      <Item value="ToList" priority="0" />
+      <Item value="BindingList" priority="0" />
+      <Item value="TestClass" priority="0" />
+      <Item value="void" priority="3" />
+      <Item value="protected" priority="1" />
+      <Item value="override" priority="1" />
+      <Item value="virtual" priority="1" />
+      <Item value="TestInitialize" priority="0" />
+      <Item value="TestCleanup" priority="0" />
+      <Item value="before_each_spec" priority="0" />
+      <Item value="after_each_spec" priority="0" />
+      <Item value="Specification" priority="0" />
+      <Item value="int" priority="0" />
+      <Item value="Predicate" priority="0" />
+      <Item value="Entity" priority="5" />
+      <Item value="FakeTable&lt;Entity&gt;" priority="0" />
+      <Item value="Id" priority="3" />
+      <Item value="Name" priority="4" />
+      <Item value="NewsStyleUriParser" priority="0" />
+      <Item value="IsTrue" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
