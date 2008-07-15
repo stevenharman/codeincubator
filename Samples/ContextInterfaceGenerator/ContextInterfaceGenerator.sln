@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextInterfaceGenerator", "ContextInterfaceGenerator\ContextInterfaceGenerator.csproj", "{799E13BC-B40F-4292-AB6C-AC9FAEC12F56}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://vrp-tfs-000:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ContextInterfaceGenerator\\ContextInterfaceGenerator.csproj
+		SccProjectName1 = ContextInterfaceGenerator
+		SccLocalPath1 = ContextInterfaceGenerator
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{799E13BC-B40F-4292-AB6C-AC9FAEC12F56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{799E13BC-B40F-4292-AB6C-AC9FAEC12F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{799E13BC-B40F-4292-AB6C-AC9FAEC12F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{799E13BC-B40F-4292-AB6C-AC9FAEC12F56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
