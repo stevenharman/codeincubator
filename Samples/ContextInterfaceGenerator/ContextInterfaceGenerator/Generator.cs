@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace ContextInterfaceGenerator
@@ -49,6 +46,11 @@ namespace ContextInterfaceGenerator
             get { return _definition.ClassName; }
         }
 
+        private string Modifier
+        {
+            get { return _definition.AccessModifier; }
+        }
+
         public void GenerateContext(string outputFile)
         {
             _outputFile = outputFile;
@@ -69,15 +71,15 @@ namespace ContextInterfaceGenerator
         {
             WriteProxyHeader();
             WriteProxyConstructor();
-            WriteProxyBasics();
+            WriteGetTableMethod();
             WriteProxyTypes();
-            WriteProxyFunctions();
+            //WriteProxyFunctions();
             CloseBrace();
         }
 
         private void WriteProxyTypes()
         {
-            foreach(ContextType type in _types)
+            foreach (ContextType type in _types)
             {
                 WriteProxyType(type);
             }
@@ -86,108 +88,32 @@ namespace ContextInterfaceGenerator
         private void WriteProxyType(ContextType type)
         {
             Writer.WriteLine();
-            Writer.WriteLine(Tabs + string.Format("public ITable<{0}> {1}", type.ClassName, type.MemberName));
+            Writer.WriteLine(Tabs + string.Format("ITable<{0}> {2}.{1}", type.ClassName, type.MemberName, InterfaceName));
             OpenBrace();
-            Writer.WriteLine(Tabs + string.Format("get {{ return new TableProxy<{0}>(_context.{1}); }}", type.ClassName, type.MemberName));
+            Writer.WriteLine(Tabs + string.Format("get {{ return new TableProxy<{0}>({1}); }}", type.ClassName, type.MemberName));
             CloseBrace();
-        }
-
-        private void WriteProxyBasics()
-        {
-            WriteProxyMethod("CreateDatabase");
-            WriteProxyMethod("DatabaseExists", "bool");
-            WriteProxyMethod("DeleteDatabase");
-            WriteProxyMethod("Dispose");
-            WriteProxyMethod("ExecuteCommand", "int", "string command, params object[] parameters", "command, parameters");
-            WriteProxyMethod("ExecuteQuery<TResult>", "IEnumerable<TResult>", "string query, params object[] parameters", "query, parameters");
-            WriteProxyMethod("ExecuteQuery", "IEnumerable", "Type elementType, string query, params object[] parameters", "elementType, query, parameters");
-            WriteProxyMethod("GetChangeSet", "ChangeSet");
-            WriteProxyMethod("GetCommand", "DbCommand", "IQueryable query", "query");
-            WriteGetTableMethod();
-            WriteProxyMethod("GetTable", "ITable", "Type type", "type");
-            WriteProxyMethod("Refresh", "RefreshMode mode, params object[] entities", "mode, entities");
-            WriteProxyMethod("Refresh", "RefreshMode mode, IEnumerable entities", "mode, entities");
-            WriteProxyMethod("Refresh", "RefreshMode mode, object entity", "mode, entity");
-            WriteProxyMethod("SubmitChanges");
-            WriteProxyMethod("SubmitChanges", "ConflictMode failureMode", "failureMode");
-            WriteProxyMethod("Translate<TResult>", "IEnumerable<TResult>", "DbDataReader reader", "reader");
-            WriteProxyMethod("Translate", "IMultipleResults", "DbDataReader reader", "reader");
-            WriteProxyMethod("Translate", "IEnumerable", "Type elementType, DbDataReader reader", "elementType, reader");
-            WriteProxyProperty("ChangeConflicts", "ChangeConflictCollection", true, false);
-            WriteProxyProperty("CommandTimeout", "int", true, true);
-            WriteProxyProperty("Connection", "DbConnection", true, false);
-            WriteProxyProperty("DeferredLoadingEnabled", "bool", true, true);
-            WriteProxyProperty("LoadOptions", "DataLoadOptions", true, true);
-            WriteProxyProperty("Log", "TextWriter", true, true);
-            WriteProxyProperty("Mapping", "MetaModel", true, false);
-            WriteProxyProperty("ObjectTrackingEnabled", "bool", true, true);
-            WriteProxyProperty("Transaction", "DbTransaction", true, true);
         }
 
         private void WriteGetTableMethod()
         {
             Writer.WriteLine();
-            Writer.WriteLine(Tabs + "public ITable<TEntity> GetTable<TEntity>() where TEntity : class");
+            Writer.WriteLine(Tabs + string.Format("ITable<TEntity> {0}.GetTable<TEntity>()", InterfaceName));
             OpenBrace();
-            Writer.WriteLine(Tabs + "return new TableProxy<TEntity>(_context.GetTable<TEntity>());");
+            Writer.WriteLine(Tabs + "return new TableProxy<TEntity>(GetTable<TEntity>());");
             CloseBrace();
-        }
-
-        private void WriteProxyProperty(string Method, string Return, bool hasGet, bool hasSet)
-        {
-            Writer.WriteLine();
-            Writer.WriteLine(Tabs + string.Format("public {0} {1}", Return, Method));
-            OpenBrace();
-            
-            if (hasGet)
-                Writer.WriteLine(Tabs + string.Format("get {{ return _context.{0}; }}", Method));
-
-            if (hasSet)
-                Writer.WriteLine(Tabs + string.Format("set {{ _context.{0} = value; }}", Method));
-            
-            CloseBrace();
-        }
-
-        private void WriteProxyMethod(string Method, string Return, string Signature, string Call)
-        {
-            Writer.WriteLine();
-            Writer.WriteLine(Tabs + string.Format("public {0} {1}({2})", Return, Method, Signature));
-            OpenBrace();
-            Writer.WriteLine(Tabs + string.Format("{0}_context.{1}({2});", 
-                Return == "void" ? string.Empty : "return ",
-                Method, Call));
-            CloseBrace();
-        }
-
-        private void WriteProxyMethod(string Method, string Signature, string Call)
-        {
-            WriteProxyMethod(Method, "void", Signature, Call);
-        }
-
-        private void WriteProxyMethod(string Method)
-        {
-            WriteProxyMethod(Method, "void", string.Empty, string.Empty);
-        }
-
-        private void WriteProxyMethod(string Method, string Return)
-        {
-            WriteProxyMethod(Method, Return, string.Empty, string.Empty);
         }
 
         private void WriteProxyConstructor()
         {
-            Writer.WriteLine(Tabs + string.Format("private readonly {0} _context;", ClassName));
-            Writer.WriteLine();
-            Writer.WriteLine(Tabs + string.Format("public {0}({1} context)", ProxyName, ClassName));
+            Writer.WriteLine(Tabs + string.Format("public {0}(string connectionString) : base(connectionString)", ProxyName));
             OpenBrace();
-            Writer.WriteLine(Tabs + "_context = context;");
             CloseBrace();
         }
 
         private void WriteProxyHeader()
         {
             Writer.WriteLine();
-            Writer.WriteLine(Tabs + string.Format("public partial class {0} : {1}", ProxyName, InterfaceName));
+            Writer.WriteLine(Tabs + string.Format("{3} partial class {0} : {1}, {2}", ProxyName, ClassName, InterfaceName, Modifier));
             OpenBrace();
         }
 
@@ -248,33 +174,9 @@ namespace ContextInterfaceGenerator
         //If Direction is InOut then ref parameter
         //All parameters for functions are nullable.
 
-        private void WriteProxyFunctions()
-        {
-            foreach (ContextFunction function in _functions)
-            {
-                WriteProxyFunction(function);
-            }
-        }
-
-        private void WriteProxyFunction(ContextFunction function)
-        {
-            Writer.WriteLine();
-            if (!string.IsNullOrEmpty(function.ReturnType))
-                Writer.WriteLine(Tabs + string.Format("public {0}{3} {1}({2})", function.ReturnType, function.MethodName,
-                    function.GetSignature(), function.IsComposable ? "?" : string.Empty));
-            else
-                Writer.WriteLine(Tabs + string.Format("public {0}<{1}> {2}({3})",
-                                                      function.IsComposable ? "IQueryable" : "ISingleResult",
-                                                      function.ReturnElement, function.MethodName,
-                                                      function.GetSignature()));
-            OpenBrace();
-            Writer.WriteLine(Tabs + string.Format("return _context.{0}({1});", function.MethodName, function.GetCall()));
-            CloseBrace();
-        }
-
         private void WriteInterfaceFunctions()
         {
-            foreach(ContextFunction function in _functions)
+            foreach (ContextFunction function in _functions)
             {
                 WriteInterfaceFunction(function);
             }
@@ -284,7 +186,7 @@ namespace ContextInterfaceGenerator
         {
             if (!string.IsNullOrEmpty(function.ReturnType))
                 Writer.WriteLine(Tabs + string.Format("{0}{3} {1}({2});", function.ReturnType, function.MethodName,
-                    function.GetSignature(), function.IsComposable ? "?" : string.Empty));
+                    function.GetSignature(), function.IsComposable && function.ReturnType != "System.String" ? "?" : string.Empty));
             else
                 Writer.WriteLine(Tabs + string.Format("{0}<{1}> {2}({3});",
                                                       function.IsComposable ? "IQueryable" : "ISingleResult",
@@ -361,3 +263,4 @@ namespace ContextInterfaceGenerator
 
     }
 }
+

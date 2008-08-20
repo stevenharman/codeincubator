@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml;
+﻿using System.Xml;
 
 namespace ContextInterfaceGenerator
 {
@@ -12,6 +8,16 @@ namespace ContextInterfaceGenerator
         {
             SetEntityNamespace(node);
             SetClassName(node);
+            SetAccessModifier(node);
+
+        }
+
+        private void SetAccessModifier(XmlNode node)
+        {
+            XmlAttribute accessModifier = node.Attributes["AccessModifier"];
+            AccessModifier = accessModifier != null 
+                ? accessModifier.InnerText.ToLower()
+                : "public";
         }
 
         private void SetClassName(XmlNode node)
@@ -30,5 +36,6 @@ namespace ContextInterfaceGenerator
 
         public string ClassName { get; set; }
         public string EntityNamespace { get; set; }
+        public string AccessModifier { get; set; }
     }
 }
