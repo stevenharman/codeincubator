@@ -2,6 +2,9 @@ This license is based on the new BSD template found here
 (http://www.opensource.org/licenses/bsd-license.php)
 
 -----------------------------------------------------------------
+Portions based on the work of Scott Bellware's (http://scottbellware.com/) 
+SpecUnit .NET project (http://code.google.com/p/specunit-net/).
+
 CodeIncubator (http://codeincubator.com)
 Copyright (c) 2008 
 by Steven Harman (http://stevenharman.net)
