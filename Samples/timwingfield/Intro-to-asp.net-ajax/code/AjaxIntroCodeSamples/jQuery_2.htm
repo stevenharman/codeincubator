@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>A little more jQuery Awesomeness</title>
+    <script src="scripts/jquery-1.2.6-vsdoc.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".stripeMe tr:even").addClass("alt");
+            $(".stripeMe tr").mouseover(function(){$(this).addClass("over")});
+            $(".stripeMe tr").mouseout(function(){$(this).removeClass("over")});
+        });
+    </script>
+    <style type="text/css">
+        tr.alt td{background-color: #ccc;}
+        tr.over td{background-color: #333; color: #fff;}
+    </style>
+</head>
+<body>
+<h3>Table striping made easy</h3>
+<table class="stripeMe">
+    <tr>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Position</th>
+    </tr>
+    <tr>
+        <td>Rick Nash</td>
+        <td>61</td>
+        <td>Left Wing</td>
+    </tr>
+    <tr>
+        <td>R.J. Umberger</td>
+        <td>18</td>
+        <td>Center</td>
+    </tr>
+    <tr>
+        <td>Rostislav Kelsla</td>
+        <td>97</td>
+        <td>Defense</td>
+    </tr>
+    <tr>
+        <td>Derrick Brassard</td>
+        <td>16</td>
+        <td>Center</td>
+    </tr>
+    <tr>
+        <td>Pascal Leclaire</td>
+        <td>31</td>
+        <td>Goaltender</td>
+    </tr>
+    <tr>
+        <td>Jakub Voracek</td>
+        <td>93</td>
+        <td>Right Wing</td>
+    </tr>
+    <tr>
+        <td>Fedor Tyutin</td>
+        <td>51</td>
+        <td>Defense</td>
+    </tr>
+</table>
+</body>
+</html>
