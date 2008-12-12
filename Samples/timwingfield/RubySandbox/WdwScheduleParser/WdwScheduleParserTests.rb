@@ -2,7 +2,7 @@ require 'test/unit'
 require "WdwScheduleParser"
 class WdwScheduleParserTest < Test::Unit::TestCase
 	
-	@@f = File.new("wdw_mk_march09.htm")
+	@@f = File.open("wdw_mk_march09.htm")
 	
 	def test_file_is_loaded
 		assert_not_nil(@@f)
