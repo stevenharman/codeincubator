@@ -1,0 +1,181 @@
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 1:33:19 AM,10/8/2008 1:33:21 AM,1703.2013
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByZips,10/8/2008 1:33:57 AM,10/8/2008 1:33:58 AM,1171.9275
+web service listings call:1171.9275mS
+listingAdPreview
+com.realliving.webservices.User.GetListingPhotos,10/8/2008 1:41:36 AM,10/8/2008 1:41:36 AM,140.6313
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 10:11:00 AM,10/8/2008 10:11:07 AM,6765.9281
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByZips,10/8/2008 10:11:38 AM,10/8/2008 10:11:39 AM,1281.3074
+web service listings call:1296.9331mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 10:11:54 AM,10/8/2008 10:11:55 AM,953.1677
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 10:29:21 AM,10/8/2008 10:29:22 AM,1109.4176
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 11:40:42 AM,10/8/2008 11:41:01 AM,18281.952
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 11:41:36 AM,10/8/2008 11:41:37 AM,1140.6688
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 11:41:47 AM,10/8/2008 11:41:52 AM,5672.0928
+listingAdlistings
+com.realliving.webservices.Listing.GetUsersByName,10/8/2008 11:42:35 AM,10/8/2008 11:42:35 AM,187.5072
+com.realliving.webservices.Listing.GetListingsByUser,10/8/2008 11:42:35 AM,10/8/2008 11:42:37 AM,2281.3376
+web service listings call:2281.3376mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 11:42:43 AM,10/8/2008 11:42:44 AM,984.4128
+listingAdlistings
+com.realliving.webservices.Listing.GetUsersByName,10/8/2008 11:42:47 AM,10/8/2008 11:42:47 AM,109.3792
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByUser,10/8/2008 11:42:47 AM,10/8/2008 11:42:48 AM,1406.304
+web service listings call:1406.304mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 11:42:57 AM,10/8/2008 11:42:58 AM,968.7872
+com.realliving.webservices.Listing.GetListingsByOffice,10/8/2008 11:42:48 AM,10/8/2008 11:43:12 AM,24016.5472
+web service listings call:24016.5472mS
+listingAdlistings
+com.realliving.webservices.Listing.GetUsersByName,10/8/2008 11:43:16 AM,10/8/2008 11:43:16 AM,78.128
+com.realliving.webservices.Listing.GetListingsByUser,10/8/2008 11:43:16 AM,10/8/2008 11:43:17 AM,1484.432
+web service listings call:1484.432mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 11:43:23 AM,10/8/2008 11:43:24 AM,1015.664
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 11:43:31 AM,10/8/2008 11:43:32 AM,1234.4224
+listingAdlistings
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByOffice,10/8/2008 11:43:35 AM,10/8/2008 11:44:01 AM,25391.6
+web service listings call:25391.6mS
+com.realliving.webservices.Listing.GetListingsByOffice,10/8/2008 11:43:49 AM,10/8/2008 11:44:30 AM,40876.5696
+web service listings call:40876.5696mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 11:44:30 AM,10/8/2008 11:44:31 AM,953.1616
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 11:50:12 AM,10/8/2008 11:50:13 AM,984.4191
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 12:27:19 PM,10/8/2008 12:27:20 PM,1046.9219
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 12:27:29 PM,10/8/2008 12:27:30 PM,1000.0448
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 12:35:23 PM,10/8/2008 12:35:25 PM,1999.7056
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 12:40:25 PM,10/8/2008 12:40:26 PM,968.7252
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 12:45:46 PM,10/8/2008 12:45:47 PM,1250.024
+listingAdPreview
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 1:47:34 PM,10/8/2008 1:47:35 PM,1015.599
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 2:08:53 PM,10/8/2008 2:08:54 PM,1109.4247
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 2:35:41 PM,10/8/2008 2:35:42 PM,1000.0448
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 2:52:10 PM,10/8/2008 2:52:11 PM,1031.0982
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByZips,10/8/2008 2:52:16 PM,10/8/2008 2:52:16 PM,312.454
+web service listings call:312.454mS
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 2:54:16 PM,10/8/2008 2:54:17 PM,1046.7209
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 2:58:38 PM,10/8/2008 2:58:39 PM,984.3498
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 3:00:01 PM,10/8/2008 3:00:02 PM,1000.0192
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 3:02:28 PM,10/8/2008 3:02:29 PM,1000.0192
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 3:49:41 PM,10/8/2008 3:49:42 PM,1000.0448
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 3:52:01 PM,10/8/2008 3:52:02 PM,984.4191
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByOffice,10/8/2008 3:52:08 PM,10/8/2008 3:52:09 PM,1109.4247
+web service listings call:1109.4247mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 3:52:12 PM,10/8/2008 3:52:13 PM,953.1677
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByOffice,10/8/2008 3:52:29 PM,10/8/2008 3:52:29 PM,234.3855
+web service listings call:234.3855mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 3:52:37 PM,10/8/2008 3:52:37 PM,937.542
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByZips,10/8/2008 3:52:42 PM,10/8/2008 3:52:53 PM,10891.1129
+web service listings call:10891.1129mS
+listingAdPreview
+com.realliving.webservices.User.GetListingPhotos,10/8/2008 3:53:06 PM,10/8/2008 3:53:06 PM,156.257
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 4:55:56 PM,10/8/2008 4:56:04 PM,7531.5874
+listingAdPreview
+listingAdPreview
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 5:48:23 PM,10/8/2008 5:48:25 PM,1859.4583
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByOffice,10/8/2008 5:49:03 PM,10/8/2008 5:49:53 PM,49314.7092
+web service listings call:49314.7092mS
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 5:54:01 PM,10/8/2008 5:54:07 PM,6234.6543
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 5:55:32 PM,10/8/2008 5:55:34 PM,1593.8214
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 5:55:51 PM,10/8/2008 5:55:52 PM,1031.2962
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 5:56:01 PM,10/8/2008 5:56:02 PM,1031.2962
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 5:56:26 PM,10/8/2008 5:56:46 PM,19688.382
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 6:01:20 PM,10/8/2008 6:01:21 PM,1453.1901
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 6:02:28 PM,10/8/2008 6:02:29 PM,984.4191
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 6:13:49 PM,10/8/2008 6:13:50 PM,1000.0448
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 6:13:58 PM,10/8/2008 6:13:59 PM,953.1677
+listingAdPreview
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 6:25:28 PM,10/8/2008 6:25:29 PM,984.4191
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 7:34:17 PM,10/8/2008 7:34:18 PM,1031.25
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByOffice,10/8/2008 7:35:03 PM,10/8/2008 7:35:10 PM,6625
+web service listings call:6625mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 7:35:44 PM,10/8/2008 7:35:45 PM,937.5
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByZips,10/8/2008 7:35:50 PM,10/8/2008 7:35:53 PM,3453.125
+web service listings call:3453.125mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 7:36:11 PM,10/8/2008 7:36:12 PM,1015.625
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByZips,10/8/2008 7:36:16 PM,10/8/2008 7:36:19 PM,3421.875
+web service listings call:3421.875mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 7:36:30 PM,10/8/2008 7:36:31 PM,953.125
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByZips,10/8/2008 7:36:43 PM,10/8/2008 7:36:46 PM,3250
+web service listings call:3250mS
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 7:37:09 PM,10/8/2008 7:37:10 PM,1109.375
+listingAdlistings
+com.realliving.webservices.Listing.GetListingsByZips,10/8/2008 7:37:37 PM,10/8/2008 7:37:40 PM,3218.75
+web service listings call:3218.75mS
+listingAdPreview
+com.realliving.webservices.User.GetListingPhotos,10/8/2008 7:37:58 PM,10/8/2008 7:37:58 PM,125
+com.realliving.webservices.User.GetListingPhotos,10/8/2008 7:37:58 PM,10/8/2008 7:37:59 PM,234.375
+com.realliving.webservices.User.GetListingPhotos,10/8/2008 7:37:59 PM,10/8/2008 7:37:59 PM,109.375
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 7:39:36 PM,10/8/2008 7:39:37 PM,953.1494
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 10:00:09 PM,10/8/2008 10:00:10 PM,1531.3088
+litingADHome
+com.realliving.webservices.User.GetUser,10/8/2008 10:01:06 PM,10/8/2008 10:01:07 PM,984.4128
