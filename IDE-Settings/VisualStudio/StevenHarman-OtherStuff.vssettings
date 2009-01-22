@@ -349,6 +349,7 @@
 				<PropertyValue name="StartPageView">1</PropertyValue>
 				<PropertyValue name="CssIndentTabs">0</PropertyValue>
 				<PropertyValue name="AutoThumbnailType">0</PropertyValue>
+				<PropertyValue name="AutoFormAroundControls">1</PropertyValue>
 				<PropertyValue name="ShowVisualAids">1</PropertyValue>
 				<PropertyValue name="CssTextDesignMode">2</PropertyValue>
 				<PropertyValue name="WebPartZoneColor">16750848</PropertyValue>
@@ -683,6 +684,10 @@
 					<RemoveShortcut Command="Format.AlignTops" Scope="VC Dialog Editor">Ctrl+Shift+Up Arrow</RemoveShortcut>
 					<RemoveShortcut Command="Format.AlignBottoms" Scope="VC Dialog Editor">Ctrl+Shift+Down Arrow</RemoveShortcut>
 					<RemoveShortcut Command="Edit.EmacsWordLowercase" Scope="Global">Ctrl+Shift+Down Arrow</RemoveShortcut>
+					<RemoveShortcut Command="TestDriven.NET.RerunTests" Scope="Global">Ctrl+T, R</RemoveShortcut>
+					<RemoveShortcut Command="TestDriven.NET.RunTests" Scope="Global">Ctrl+T, T</RemoveShortcut>
+					<RemoveShortcut Command="Test.RunTestsInCurrentContext" Scope="Global">Ctrl+R, T</RemoveShortcut>
+					<RemoveShortcut Command="TestResults.RunAllTestsInTestResults" Scope="Global">Ctrl+R, D</RemoveShortcut>
 					<Shortcut Command="View.NavigateBackward" Scope="Global">Ctrl+Alt+Left Arrow</Shortcut>
 					<Shortcut Command="View.NavigateForward" Scope="Global">Ctrl+Alt+Right Arrow</Shortcut>
 					<Shortcut Command="ReSharper_ErrorsView_IgnoreErrors" Scope="ReSharper Errors in Solution Window">Del</Shortcut>
@@ -805,12 +810,8 @@
 					<Shortcut Command="Edit.MakeUppercase" Scope="Global">Ctrl+Shift+Up Arrow</Shortcut>
 					<Shortcut Command="Edit.MakeLowercase" Scope="Global">Ctrl+Shift+Down Arrow</Shortcut>
 					<Shortcut Command="File.TfsHistory" Scope="Global">Ctrl+Shift+Alt+H</Shortcut>
-					<RemoveShortcut Command="TestDriven.NET.RerunTests" Scope="Global">Ctrl+T, R</RemoveShortcut>
-					<RemoveShortcut Command="TestDriven.NET.RunTests" Scope="Global">Ctrl+T, T</RemoveShortcut>
-					<RemoveShortcut Command="Test.RunTestsInCurrentContext" Scope="Global">Ctrl+R, T</RemoveShortcut>
 					<Shortcut Command="TestDriven.NET.RunTests" Scope="Global">Ctrl+R, T</Shortcut>
 					<Shortcut Command="TestDriven.NET.RerunTests" Scope="Global">Ctrl+R, R</Shortcut>
-					<RemoveShortcut Command="TestResults.RunAllTestsInTestResults" Scope="Global">Ctrl+R, D</RemoveShortcut>
 					<Shortcut Command="TestDriven.NET.RerunWithDebugger" Scope="Global">Ctrl+R, D</Shortcut>
 				</UserShortcuts>
 			</KeyboardShortcuts>
