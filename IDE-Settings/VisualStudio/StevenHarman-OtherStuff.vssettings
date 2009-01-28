@@ -177,31 +177,6 @@
 				<PropertyValue name="EncapsulateField_SearchInComments">0</PropertyValue>
 				<PropertyValue name="ProgressDialogDelaySeconds">2</PropertyValue>
 			</ToolsOptionsSubCategory>
-			<ToolsOptionsSubCategory name="C/C++" RegisteredName="C/C++" PackageName="Text Management Package">
-				<PropertyValue name="TabSize">4</PropertyValue>
-				<PropertyValue name="AutoListMembers">true</PropertyValue>
-				<PropertyValue name="IndentStyle">2</PropertyValue>
-				<PropertyValue name="HideAdvancedMembers">true</PropertyValue>
-				<PropertyValue name="ShowNavigationBar">true</PropertyValue>
-				<PropertyValue name="VirtualSpace">false</PropertyValue>
-				<PropertyValue name="InsertTabs">false</PropertyValue>
-				<PropertyValue name="WordWrapGlyphs">true</PropertyValue>
-				<PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
-				<PropertyValue name="ShowLineNumbers">true</PropertyValue>
-				<PropertyValue name="WordWrap">false</PropertyValue>
-				<PropertyValue name="IndentSize">4</PropertyValue>
-				<PropertyValue name="CutCopyBlankLines">true</PropertyValue>
-				<PropertyValue name="AutoListParams">true</PropertyValue>
-			</ToolsOptionsSubCategory>
-			<ToolsOptionsSubCategory name="C/C++ Specific" RegisteredName="C/C++ Specific" PackageName="Visual C++ Language Manager Package">
-				<PropertyValue name="EnterOutliningModeWhenFilesOpen">true</PropertyValue>
-				<PropertyValue name="IntellisenseOptions">0</PropertyValue>
-				<PropertyValue name="AutomaticOutliningOfStatementBlocks">false</PropertyValue>
-				<PropertyValue name="ColorizeInactiveBlocksDifferently">true</PropertyValue>
-				<PropertyValue name="EnableQuickInfoToolTips">true</PropertyValue>
-				<PropertyValue name="IndentBraces">false</PropertyValue>
-				<PropertyValue name="AutomaticOutliningOfPragmaRegions">true</PropertyValue>
-			</ToolsOptionsSubCategory>
 			<ToolsOptionsSubCategory name="CSS" RegisteredName="CSS" PackageName="Text Management Package">
 				<PropertyValue name="TabSize">4</PropertyValue>
 				<PropertyValue name="AutoListMembers">true</PropertyValue>
@@ -813,6 +788,11 @@
 					<Shortcut Command="TestDriven.NET.RunTests" Scope="Global">Ctrl+R, T</Shortcut>
 					<Shortcut Command="TestDriven.NET.RerunTests" Scope="Global">Ctrl+R, R</Shortcut>
 					<Shortcut Command="TestDriven.NET.RerunWithDebugger" Scope="Global">Ctrl+R, D</Shortcut>
+					<Shortcut Command="VisualSVN.Commit" Scope="Global">Ctrl+K, C</Shortcut>
+					<Shortcut Command="VisualSVN.Update" Scope="Global">Ctrl+K, U</Shortcut>
+					<Shortcut Command="VisualSVN.ShowChanges" Scope="Global">Ctrl+K, D</Shortcut>
+					<Shortcut Command="VisualSVN.RevertChanges" Scope="Global">Ctrl+K, R</Shortcut>
+					<Shortcut Command="VisualSVN.ShowLog" Scope="Global">Ctrl+K, L</Shortcut>
 				</UserShortcuts>
 			</KeyboardShortcuts>
 		</Category>
