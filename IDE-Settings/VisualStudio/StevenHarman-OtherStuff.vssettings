@@ -799,6 +799,7 @@
 					<RemoveShortcut Command="Table.ColumntotheRight" Scope="HTML Editor Design View">Ctrl+Alt+Right Arrow</RemoveShortcut>
 					<Shortcut Command="View.NavigateBackward" Scope="Global">Ctrl+Alt+Left Arrow</Shortcut>
 					<Shortcut Command="View.NavigateForward" Scope="Global">Ctrl+Alt+Right Arrow</Shortcut>
+					<Shortcut Command="Macros.MyMacros.SolutionCollapser.CollapseAll" Scope="Global">Ctrl+Shift+Alt+-</Shortcut>
 				</UserShortcuts>
 			</KeyboardShortcuts>
 		</Category>
