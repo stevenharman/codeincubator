@@ -1,46 +1,67 @@
 <TemplatesExport family="Live Templates">
   <Template uid="06dfa132-61b1-4ee6-899b-99254c750e38" text="public override void after_each()&#xD;&#xA;{&#xD;&#xA;    $END$&#xD;&#xA;}" shortcut="ae" description="after_each: teardown any context here" reformat="true" shortenQualifiedReferences="true">
-        <Context>
-          <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
-        </Context>
-        <Categories>
-          <Category name="context/specification" />
-        </Categories>
-        <Variables />
-        <CustomProperties />
-      </Template>
-      <Template uid="18199e10-4b76-4fd0-bfdb-ca21f7e2ceae" text="public class $context_name$ : Specification&#xD;&#xA;{&#xD;&#xA;    $END$&#xD;&#xA;}" shortcut="cont" description="Context - create the Context (when part of context/specification)" reformat="true" shortenQualifiedReferences="true">
-        <Context>
-          <CSharpContext context="TypeAndNamespace" minimumLanguageVersion="2.0" />
-        </Context>
-        <Categories>
-          <Category name="context/specification" />
-        </Categories>
-        <Variables>
-          <Variable name="context_name" expression="" initialRange="0" />
-        </Variables>
-        <CustomProperties />
-      </Template>
-      <Template uid="d7c0c46f-de6f-46c7-9f74-0b6b91345939" text="[Test]&#xD;&#xA;public void $specification_name$()&#xD;&#xA;{&#xD;&#xA;    $END$&#xD;&#xA;}" shortcut="spec" description="Specification - An spec/observation (MbUnit Test)" reformat="true" shortenQualifiedReferences="true">
-        <Context>
-          <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
-        </Context>
-        <Categories>
-          <Category name="context/specification" />
-        </Categories>
-        <Variables>
-          <Variable name="specification_name" expression="" initialRange="0" />
-        </Variables>
-        <CustomProperties />
-      </Template>
-      <Template uid="f3695586-aafe-495c-8cdd-c34788f0973f" text="public override void establish_context()&#xD;&#xA;{&#xD;&#xA;    $END$&#xD;&#xA;}" shortcut="est" description="establish_context: setup the spec's context" reformat="true" shortenQualifiedReferences="true">
-        <Context>
-          <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
-        </Context>
-        <Categories>
-          <Category name="context/specification" />
-        </Categories>
-        <Variables />
-        <CustomProperties />
-      </Template>
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="context/specification" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="18199e10-4b76-4fd0-bfdb-ca21f7e2ceae" text="public class $context_name$ : Specification&#xD;&#xA;{&#xD;&#xA;    $END$&#xD;&#xA;}" shortcut="cont" description="Context - create the Context (when part of context/specification)" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeAndNamespace" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="context/specification" />
+    </Categories>
+    <Variables>
+      <Variable name="context_name" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="d7c0c46f-de6f-46c7-9f74-0b6b91345939" text="[Test]&#xD;&#xA;public void $specification_name$()&#xD;&#xA;{&#xD;&#xA;    $END$&#xD;&#xA;}" shortcut="spec" description="Specification - An spec/observation (MbUnit Test)" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="context/specification" />
+    </Categories>
+    <Variables>
+      <Variable name="specification_name" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="f3695586-aafe-495c-8cdd-c34788f0973f" text="public override void establish_context()&#xD;&#xA;{&#xD;&#xA;    $END$&#xD;&#xA;}" shortcut="est" description="establish_context: setup the spec's context" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="context/specification" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="773ee581-38ea-4d01-a934-59f41bb37cde" text="[Specification]&#xD;&#xA;public void $specify_something$()&#xD;&#xA;{&#xD;&#xA;	$END$&#xD;&#xA;}" shortcut="spec" description="Specification" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="specify_something" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="28886ff9-0b96-4312-9bcb-859d6e4abb32" text="public class when_$some_context_exists$ : Concerns&lt;$The_Concern$&gt;&#xD;&#xA;{&#xD;&#xA;	protected override void Context()&#xD;&#xA;	{&#xD;&#xA;		$END$&#xD;&#xA;	}&#xD;&#xA;}" shortcut="when" description="A new Context/Specification" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeAndNamespace" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="some_context_exists" expression="" initialRange="0" />
+      <Variable name="The_Concern" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
 </TemplatesExport>
