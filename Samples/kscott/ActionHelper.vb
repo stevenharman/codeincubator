@@ -1,3 +1,11 @@
+        'Dim mock = Mock<ISomething>
+
+        'Test
+
+        'Dim helper As New ActionHelper(Of XXX) With {.MethodName = "SetBlah", .Parameters = New Object() {"bob"}}
+        'mock.AssertWasCalled(AddressOf helper.Action)
+        'Read As: mock.AssertWasCalled(o => o.SetBlah("bob"));
+		
 Public Class ActionHelper(Of T)
 
     Private _methodName As String
