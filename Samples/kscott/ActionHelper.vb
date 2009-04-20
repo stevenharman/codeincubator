@@ -38,6 +38,16 @@ Public Class ActionHelper(Of T)
         End Set
     End Property
 
+    Private _genericArguments() As Type
+    Public Property GenericArguments() As Type()
+        Get
+            Return _genericArguments
+        End Get
+        Set(ByVal value As Type())
+            _genericArguments = value
+        End Set
+    End Property
+
     Public Sub Action(ByVal obj As T)
         Dim types() As Type = {}
 
@@ -49,7 +59,13 @@ Public Class ActionHelper(Of T)
             types = _types
         End If
 
-        GetType(T).GetMethod(MethodName, types).Invoke(obj, Parameters)
+        Dim method = GetType(T).GetMethod(MethodName, types)
+        If method.IsGenericMethod Then
+            method.MakeGenericMethod(GenericArguments).Invoke(obj, Parameters)
+        Else
+            method.Invoke(obj, Parameters)
+        End If
+
     End Sub
 
 End Class
