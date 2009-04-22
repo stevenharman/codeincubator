@@ -8,12 +8,15 @@ namespace ContextInterfaceGenerator
         private readonly ContextDefinition _definition;
         private readonly IEnumerable<ContextType> _types;
         private readonly IEnumerable<ContextFunction> _functions;
+        private readonly bool _functionsOnly;
 
-        public Generator(ContextDefinition definition, IEnumerable<ContextType> types, IEnumerable<ContextFunction> functions)
+        public Generator(ContextDefinition definition, IEnumerable<ContextType> types, IEnumerable<ContextFunction> functions,
+            bool functionsOnly)
         {
             _definition = definition;
             _types = types;
             _functions = functions;
+            _functionsOnly = functionsOnly;
         }
 
         private int _tabCount;
@@ -59,7 +62,8 @@ namespace ContextInterfaceGenerator
 
             GenerateInterface();
 
-            GenerateProxy();
+            if (!_functionsOnly)
+                GenerateProxy();
 
             CloseBrace();
 
@@ -126,8 +130,11 @@ namespace ContextInterfaceGenerator
         private void GenerateInterface()
         {
             WriteInterfaceHeader();
-            WriteInterfaceBasics();
-            WriteInterfaceTypes();
+            if (!_functionsOnly)
+            {
+                WriteInterfaceBasics();
+                WriteInterfaceTypes();
+            }
             WriteInterfaceFunctions();
             CloseBrace();
         }
