@@ -10,11 +10,13 @@ namespace ContextInterfaceGenerator
     {
         static void Main(string[] args)
         {
-            if(args.Length != 2)
+            if(args.Length < 2)
                 throw new ApplicationException("You must supply a dbml file and an output file as parameters.");
 
             string dbmlFile = args[0];
             string outputFile = args[1];
+
+            bool functionsOnly = (args.Length > 2 && args[2].ToLower() == "functionsonly");
 
             if (!File.Exists(dbmlFile))
                 throw new ApplicationException("Invalid dbml file specified.");
@@ -25,7 +27,7 @@ namespace ContextInterfaceGenerator
 
             IList<ContextFunction> functions = ReadFunctionsFromFile(dbmlFile);
 
-            var generator = new Generator(definition, types, functions);
+            var generator = new Generator(definition, types, functions, functionsOnly);
             
             bool foundFile = false;
 
