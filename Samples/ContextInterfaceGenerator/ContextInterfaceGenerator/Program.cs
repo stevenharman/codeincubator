@@ -17,6 +17,7 @@ namespace ContextInterfaceGenerator
             string outputFile = args[1];
 
             bool functionsOnly = (args.Length > 2 && args[2].ToLower() == "functionsonly");
+            bool visualBasic = (args.Length == 3 && args[2].ToLower() == "vb") || (args.Length == 4 && args[3].ToLower() == "vb");
 
             if (!File.Exists(dbmlFile))
                 throw new ApplicationException("Invalid dbml file specified.");
@@ -27,7 +28,13 @@ namespace ContextInterfaceGenerator
 
             IList<ContextFunction> functions = ReadFunctionsFromFile(dbmlFile);
 
-            var generator = new Generator(definition, types, functions, functionsOnly);
+            IGenerator generator;
+            if (!visualBasic)
+                generator = new Generator(definition, types, functions, functionsOnly);
+            else
+            {
+                generator = new VisualBasicGenerator(definition, types, functions, functionsOnly);
+            }
             
             bool foundFile = false;
 
