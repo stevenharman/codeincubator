@@ -91,5 +91,17 @@ namespace ContextInterfaceGenerator
             var list = Parameters.Select(prm => string.Format("{0}{1}", prm.ByRef ? "ref " : string.Empty, prm.Name));
             return string.Join(", ", list.ToArray());
         }
+
+        public string GetSignatureForVB()
+        {
+            var list = Parameters.Select(prm => string.Format("{0}{2} As {1}", prm.ByRef ? "ByRef " : "ByVal ", prm.Type == "System.String" ? "String" : "Nullable(Of " + prm.Type + ")", prm.Name));
+            return string.Join(", ", list.ToArray());
+        }
+
+        public string GetCallForVB()
+        {
+            var list = Parameters.Select(prm => prm.Name);
+            return string.Join(", ", list.ToArray());
+        }
     }
 }

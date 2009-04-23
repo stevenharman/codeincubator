@@ -3,7 +3,12 @@ using System.IO;
 
 namespace ContextInterfaceGenerator
 {
-    public class Generator
+    public interface IGenerator
+    {
+        void GenerateContext(string outputFile);
+    }
+
+    public class Generator : IGenerator
     {
         private readonly ContextDefinition _definition;
         private readonly IEnumerable<ContextType> _types;
