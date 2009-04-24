@@ -191,6 +191,11 @@ namespace ContextInterfaceGenerator
             WriteProxyProperty(
                 "Public Shadows ReadOnly Property Transaction() As DbTransaction Implements {0}.Transaction",
                 "Return MyBase.Transaction()");
+
+            foreach (ContextFunction function in _functions)
+            {
+                WriteProxyFunction(function);
+            }
         }
 
         private void WriteProxyProperty(string signature, string call)
@@ -237,12 +242,6 @@ namespace ContextInterfaceGenerator
             Writer.WriteLine(Tabs + string.Format("return New TableProxy(Of {0})(MyBase.{1})", type.ClassName, type.MemberName));
             CloseGet();
             Writer.WriteLine(Tabs + "End Property");
-        }
-
-        private void CloseNamespace()
-        {
-            _tabCount--;
-            Writer.WriteLine(Tabs + "End Namespace");
         }
 
         private void CloseClass()
@@ -381,13 +380,29 @@ namespace ContextInterfaceGenerator
         private void WriteInterfaceFunction(ContextFunction function)
         {
             if (!string.IsNullOrEmpty(function.ReturnType))
-                Writer.WriteLine(Tabs + string.Format("Function {1}({2}) As {0} Implements {3}.{1}", function.IsComposable && function.ReturnType != "System.String" ? "Nullable(Of " + function.ReturnType + ")" : function.ReturnType, function.MethodName,
+                Writer.WriteLine(Tabs + string.Format("Function {1}({2}) As {0}", function.IsComposable && function.ReturnType != "System.String" ? "Nullable(Of " + function.ReturnType + ")" : function.ReturnType, function.MethodName,
+                    function.GetSignatureForVB()));
+            else
+                Writer.WriteLine(Tabs + string.Format("Function {2}({3}) As {0}(Of {1})",
+                                                      function.IsComposable ? "IQueryable" : "ISingleResult",
+                                                      function.ReturnElement, function.MethodName,
+                                                      function.GetSignatureForVB()));
+        }
+
+        private void WriteProxyFunction(ContextFunction function)
+        {
+            Writer.WriteLine();
+            if (!string.IsNullOrEmpty(function.ReturnType))
+                Writer.WriteLine(Tabs + string.Format("Private Function {1}_proxy({2}) As {0} Implements {3}.{1}", function.IsComposable && function.ReturnType != "System.String" ? "Nullable(Of " + function.ReturnType + ")" : function.ReturnType, function.MethodName,
                     function.GetSignatureForVB(), InterfaceName));
             else
-                Writer.WriteLine(Tabs + string.Format("Function {2}({3}) As {0}(Of {1}) Implements {4}.{2}",
+                Writer.WriteLine(Tabs + string.Format("Private Function {2}_proxy({3}) As {0}(Of {1}) Implements {4}.{2}",
                                                       function.IsComposable ? "IQueryable" : "ISingleResult",
                                                       function.ReturnElement, function.MethodName,
                                                       function.GetSignatureForVB(), InterfaceName));
+            _tabCount++;
+            Writer.WriteLine(Tabs + string.Format("Return {0}({1})", function.MethodName, function.GetCallForVB()));
+            CloseFunction();
         }
 
         private void WriteInterfaceTypes()
