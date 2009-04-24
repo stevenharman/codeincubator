@@ -58,14 +58,13 @@ namespace ContextInterfaceGenerator
         {
             _outputFile = outputFile;
 
-            OutputNamespace();
+            OutputImports();
 
             GenerateInterface();
 
             if (!_functionsOnly)
                 GenerateProxy();
 
-            CloseNamespace();
 
             Writer.Close();
             Writer = null;
@@ -118,12 +117,8 @@ namespace ContextInterfaceGenerator
                 "Return GetChangeSet()");
 
             WriteProxyFunction(
-                "Public Shadows Function GetCommand(ByVal query As IQueryable) As DbCommand Implements (0).GetCommand",
+                "Public Shadows Function GetCommand(ByVal query As IQueryable) As DbCommand Implements {0}.GetCommand",
                 "Return MyBase.GetCommand(query)");
-
-            WriteProxyFunction(
-                "Public Shadows Function GetTable(Of TEntity As Class)() As ITable(Of TEntity) Implements {0}.GetTable",
-                "Return MyBase.GetTable(Of TEntity)()");
 
             WriteProxyFunction(
                 "Public Shadows Function GetTable(ByVal type As Type) As ITable Implements {0}.GetTable",
@@ -237,9 +232,9 @@ namespace ContextInterfaceGenerator
         private void WriteProxyType(ContextType type)
         {
             Writer.WriteLine();
-            Writer.WriteLine(Tabs + string.Format("Private ReadOnly Property {1} As ITable(Of {0}) Implements {2}.{1}", type.ClassName, type.MemberName, InterfaceName));
+            Writer.WriteLine(Tabs + string.Format("Private Overloads ReadOnly Property {1}() As ITable(Of {0}) Implements {2}.{1}", type.ClassName, type.MemberName, InterfaceName));
             OpenGet();
-            Writer.WriteLine(Tabs + string.Format("return New TableProxy(Of {0})({1})", type.ClassName, type.MemberName));
+            Writer.WriteLine(Tabs + string.Format("return New TableProxy(Of {0})(MyBase.{1})", type.ClassName, type.MemberName));
             CloseGet();
             Writer.WriteLine(Tabs + "End Property");
         }
@@ -291,9 +286,9 @@ namespace ContextInterfaceGenerator
         private void WriteGetTableMethod()
         {
             Writer.WriteLine();
-            Writer.WriteLine(Tabs + string.Format("Private Function GetTable(Of TEntity)() As ITable(Of TEntity) Implements {0}.GetTable", InterfaceName));
+            Writer.WriteLine(Tabs + string.Format("Private Shadows Function GetTable(Of TEntity As Class)() As ITable(Of TEntity) Implements {0}.GetTable", InterfaceName));
             _tabCount++;
-            Writer.WriteLine(Tabs + "return new TableProxy(Of TEntity)(GetTable(Of TEntity)())");
+            Writer.WriteLine(Tabs + "return new TableProxy(Of TEntity)(MyBase.GetTable(Of TEntity)())");
             CloseFunction();
         }
 
@@ -317,7 +312,7 @@ namespace ContextInterfaceGenerator
 
         private void WriteInterfaceHeader()
         {
-            Writer.WriteLine(Tabs + string.Format("Partial Public Interface {0}", InterfaceName));
+            Writer.WriteLine(Tabs + string.Format("Public Interface {0}", InterfaceName));
             _tabCount++;
         }
 
@@ -408,7 +403,7 @@ namespace ContextInterfaceGenerator
             Writer.WriteLine(Tabs + string.Format("ReadOnly Property {1}() As ITable(Of {0})", type.ClassName, type.MemberName));
         }
 
-        private void OutputNamespace()
+        private void OutputImports()
         {
             Writer.WriteLine("Imports System");
             Writer.WriteLine("Imports System.Data.Linq");
@@ -419,8 +414,6 @@ namespace ContextInterfaceGenerator
             Writer.WriteLine("Imports System.IO");
             Writer.WriteLine("Imports System.Linq");
             Writer.WriteLine("");
-            Writer.WriteLine("Namespace " + _definition.EntityNamespace);
-            _tabCount++;
         }
 
         private string Tabs
