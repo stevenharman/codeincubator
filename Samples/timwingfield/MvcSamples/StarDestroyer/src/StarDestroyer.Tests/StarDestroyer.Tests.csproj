@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NBehave.Spec.Framework, Version=0.4.0.0, Culture=neutral, PublicKeyToken=d421feca0f4a05f6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\NBehave.Spec.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="NBehave.Spec.NUnit, Version=0.4.0.0, Culture=neutral, PublicKeyToken=d421feca0f4a05f6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\NBehave.Spec.NUnit.dll</HintPath>
