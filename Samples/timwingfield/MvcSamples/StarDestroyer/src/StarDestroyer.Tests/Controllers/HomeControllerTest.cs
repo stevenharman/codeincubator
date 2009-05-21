@@ -69,7 +69,27 @@ namespace StarDestroyer.Tests.Controllers
             _viewResult.ShouldNotBeNull();
 
         }
+    }
 
+    public class When_testing_nbehave_spec_base : SpecBase
+    {
+        private HomeController _controller;
+        private ViewResult _result;
 
+        protected override void Establish_context()
+        {
+            _controller = new HomeController();
+        }
+
+        protected override void Because_of()
+        {
+            _result = _controller.About() as ViewResult;
+        }
+
+        [Test]
+        public void then_the_view_result_should_not_be_null()
+        {
+            _result.ShouldNotBeNull();
+        }
     }
 }
