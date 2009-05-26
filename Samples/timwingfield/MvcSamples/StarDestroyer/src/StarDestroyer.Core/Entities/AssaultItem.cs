@@ -8,7 +8,6 @@ namespace StarDestroyer.Core.Entities
         public virtual string Type { get; set; }
         public virtual string Description { get; set; }
         public virtual int LoadValue { get; set; }
-        //public virtual int Quantity { get; set; }
 
         public virtual IList<LandingShip> LandingShipsLoadedOn {get; private set;}
 

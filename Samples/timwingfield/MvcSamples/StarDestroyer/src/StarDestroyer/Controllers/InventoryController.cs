@@ -1,5 +1,6 @@
 using System.Web.Mvc;
 using StarDestroyer.Core.Services;
+using StarDestroyer.Models;
 
 namespace StarDestroyer.Controllers
 {
@@ -25,7 +26,7 @@ namespace StarDestroyer.Controllers
         {
             if (!id.HasValue) return RedirectToAction("Index");
 
-            var model = Service.GetAssaultItemById(id.Value);
+            var model = Service.GetAssaultItemById(id.Value).ToDetailModel();
 
             return View(model);
         }

@@ -6,6 +6,7 @@ using Rhino.Mocks;
 using StarDestroyer.Controllers;
 using StarDestroyer.Core.Entities;
 using StarDestroyer.Core.Services;
+using StarDestroyer.Models;
 
 namespace StarDestroyer.Tests.Controllers
 {
@@ -137,21 +138,89 @@ namespace StarDestroyer.Tests.Controllers
         }
 
         [Test]
-        public void then_the_view_model_should_be_of_type_assault_item()
+        public void then_the_view_model_should_be_of_type_assault_item_detail_model()
         {
-            _viewData.GetType().ShouldEqual(typeof(AssaultItem));
-        }
-
-        [Test]
-        public void then_the_view_data_is_the_same_returned_from_the_service()
-        {
-            _viewData.ShouldBeTheSameAs(_item);
+            _viewData.GetType().ShouldEqual(typeof(AssaultItemDetailModel));
         }
 
         [Test]
         public void then_get_assault_item_by_id_is_called_on_the_service()
         {
             _service.AssertWasCalled(x => x.GetAssaultItemById(2));
+        }
+    }
+
+    public class When_converting_an_assault_item_to_an_assault_item_detail_model : Specification
+    {
+        private AssaultItem _item;
+        private AssaultItemDetailModel _model;
+
+        protected override void Before_each()
+        {
+            _item = new AssaultItem {Description = "Some Description", Type = "Lame Troopers", LoadValue = 4};
+        }
+
+        protected override void Because()
+        {
+            _model = _item.ToDetailModel();
+        }
+
+        [Test]
+        public void then_type_is_set()
+        {
+            _model.Type.ShouldEqual(_item.Type);
+        }
+
+        [Test]
+        public void then_description_is_set()
+        {
+            _model.Description.ShouldEqual(_item.Description);
+        }
+
+        [Test]
+        public void then_load_value_is_set()
+        {
+            _model.LoadValue.ShouldEqual(_item.LoadValue);
+        }
+
+        [Test]
+        public void then_images_list_is_not_null()
+        {
+            _model.Images.ShouldNotBeNull();
+        }
+
+        [Test]
+        public void then_images_list_is_empty()
+        {
+            _model.Images.Count.ShouldEqual(0);
+        }
+    }
+
+    public class When_converting_an_assault_item_to_an_assault_item_detail_model_and_setting_up_images : Specification
+    {
+        private AssaultItem _item;
+        private AssaultItemDetailModel _model;
+
+        protected override void Before_each()
+        {
+            _item = new AssaultItem { Description = "Dark Troopers, stormtroopers, SHOCK troopers, sCOUt troopers, at-st, Speeder BIKE, Heavy blaster"};
+        }
+
+        protected override void Because()
+        {
+            _model = _item.ToDetailModel();
+        }
+
+        [Test]
+        public void then_images_list_will_have_seven_items()
+        {
+            _model.Images.Count.ShouldEqual(7);
+        }
+
+        [Test]
+        public void then_the_images_list_should_contain_the_shock_trooper_icon()
+        {
+            _model.Images.ShouldContain("Shock_trooper_icon.png");
         }
     }
 }
