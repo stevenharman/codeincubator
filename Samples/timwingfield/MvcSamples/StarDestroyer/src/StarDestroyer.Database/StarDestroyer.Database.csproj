@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{88DF794F-0006-46A8-9835-04140D3B4AFA}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{6CFDE4F0-DBBA-4B21-A1C5-422A4F7920E8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StarDestroyer.Core</RootNamespace>
-    <AssemblyName>StarDestroyer.Core</AssemblyName>
+    <RootNamespace>StarDestroyer.Database</RootNamespace>
+    <AssemblyName>StarDestroyer.Database</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -58,14 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\AssaultItem.cs" />
-    <Compile Include="Entities\LandingShip.cs" />
-    <Compile Include="Mappings\AssaultItemMap.cs" />
-    <Compile Include="Mappings\LandingShipMap.cs" />
+    <Compile Include="BuildDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Repository.cs" />
-    <Compile Include="Services\CreateDbService.cs" />
-    <Compile Include="Services\InventoryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StarDestroyer.Core\StarDestroyer.Core.csproj">
+      <Project>{88DF794F-0006-46A8-9835-04140D3B4AFA}</Project>
+      <Name>StarDestroyer.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
