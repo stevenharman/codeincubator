@@ -1,4 +1,5 @@
 using System.Web.Mvc;
+using MvcContrib.Attributes;
 using StarDestroyer.Core.Services;
 using StarDestroyer.Models;
 
@@ -29,6 +30,12 @@ namespace StarDestroyer.Controllers
             var model = Service.GetAssaultItemById(id.Value).ToDetailModel();
 
             return View(model);
+        }
+
+        [AcceptGet]
+        public ActionResult AjaxDetails(int? id)
+        {
+            return View();
         }
     }
 }
