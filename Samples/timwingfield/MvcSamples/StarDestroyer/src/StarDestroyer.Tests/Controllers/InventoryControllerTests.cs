@@ -223,4 +223,64 @@ namespace StarDestroyer.Tests.Controllers
             _model.Images.ShouldContain("Shock_trooper_icon.png");
         }
     }
+
+    public class When_calling_the_AjaxDetails_action_with_an_id : Specification
+    {
+        private ViewResult _result;
+        private object _viewData;
+        private InventoryController _controller;
+        private IInventoryService _service;
+        private AssaultItem _item;
+
+        protected override void Before_each()
+        {
+            _item = new AssaultItem
+                        {
+                            Description = "Dark Trooper squad with 7 dark troopers",
+                            LoadValue = 4,
+                            Type = "Dark Trooper Squad"
+                        };
+
+            _service = Stub<IInventoryService>();
+            _service.Stub(x => x.GetAssaultItemById(2)).Return(_item);
+
+            _controller = new InventoryController(_service);
+        }
+
+        protected override void Because()
+        {
+            _result = (ViewResult)_controller.AjaxDetails(2);
+            _viewData = _result.ViewData.Model;
+        }
+
+        [Test]
+        public void then_get_assault_item_by_id_is_called_on_the_service()
+        {
+            
+        }
+
+        [Test]
+        public void then_a_view_should_be_returned()
+        {
+            
+        }
+
+        [Test]
+        public void then_the_view_model_should_be_of_type_string()
+        {
+            
+        }
+
+        [Test]
+        public void then_the_view_model_should_contain_html_for_an_image()
+        {
+            
+        }
+
+        [Test]
+        public void then_the_view_modle_should_contain_html_for_a_description()
+        {
+            
+        }
+    }
 }
