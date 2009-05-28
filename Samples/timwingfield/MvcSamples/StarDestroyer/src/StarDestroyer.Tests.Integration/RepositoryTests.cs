@@ -177,6 +177,34 @@ namespace StarDestroyer.Tests.Integration
         }
     }
 
+    public class When_editing_an_existing_item : And_setting_up_the_temporary_database
+    {
+        private AssaultItem _item;
+        private IRepository<AssaultItem> _repo;
+        private AssaultItem _savedItem;
+        private string _descUpdate = "New Description For Update";
+
+        protected override void Before_each()
+        {
+            base.Before_each();
+            _repo = new Repository<AssaultItem>(CreateSessionFactory());
+            _item = _repo.GetById(2);
+            _item.Description = _descUpdate;
+        }
+
+        protected override void Because()
+        {
+            _repo.Update(_item);
+            _savedItem = _repo.GetById(2);
+        }
+
+        [Test]
+        public void then_the_saved_item_should_have_the_updated_data()
+        {
+            _savedItem.Description.ShouldEqual(_descUpdate);
+        }
+    }
+
     public class When_removing_an_item_from_the_assault_items : And_setting_up_the_temporary_database
     {
         private AssaultItem _itemToDelete;

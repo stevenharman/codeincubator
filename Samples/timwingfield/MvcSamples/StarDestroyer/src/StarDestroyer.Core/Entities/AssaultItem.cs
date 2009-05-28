@@ -15,5 +15,11 @@ namespace StarDestroyer.Core.Entities
         {
             LandingShipsLoadedOn = new List<LandingShip>();
         }
+        
+        public AssaultItem(int id)
+        {
+            Id = id;
+            LandingShipsLoadedOn = new List<LandingShip>();
+        }
     }
 }

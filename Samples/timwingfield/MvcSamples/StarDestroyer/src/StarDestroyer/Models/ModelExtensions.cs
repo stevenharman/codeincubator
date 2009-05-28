@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 using StarDestroyer.Core.Entities;
 
 namespace StarDestroyer.Models
@@ -39,6 +40,25 @@ namespace StarDestroyer.Models
             }
 
             return m;
+        }
+
+        public static string ToDetailHtml(this AssaultItemDetailModel item)
+        {
+            var sb = new StringBuilder();
+
+            sb.Append("<ul><li>");
+
+            foreach (var image in item.Images)
+                sb.Append("<img src=\"../../Content/Images/").Append(image).Append("\" />");
+
+            sb.Append("</li>");
+            sb.Append("<li><strong>Type:</strong> ").Append(item.Type).Append("</li>");
+            sb.Append("<li><strong>Description:</strong> ").Append(item.Description).Append("</li>");
+            sb.Append("<li><strong>Load Value:</strong> ").Append(item.LoadValue).Append("</li>");
+
+            sb.Append("</ul>");
+
+            return sb.ToString();
         }
     }
 }
