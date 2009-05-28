@@ -77,6 +77,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AssaultItemDetailModel.cs" />
+    <Compile Include="Models\AssaultItemIndexModel.cs" />
     <Compile Include="Models\ModelExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -98,6 +99,7 @@
     <Content Include="Global.asax" />
     <Content Include="Views\CreateDb\Index.aspx" />
     <Content Include="Views\Inventory\Details.aspx" />
+    <Content Include="Views\Inventory\Edit.aspx" />
     <Content Include="Views\Inventory\Index.aspx" />
     <Content Include="Views\Assault\Index.aspx" />
     <Content Include="Web.config" />

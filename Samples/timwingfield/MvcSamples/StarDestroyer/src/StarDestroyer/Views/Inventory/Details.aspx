@@ -2,7 +2,7 @@
 <%@ Import Namespace="StarDestroyer.Models"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Assault Item Details
+	Assault Item Details for <%=Html.Encode(Model.Type) %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -19,5 +19,5 @@
         <li><span>Load Value: </span><%=Html.Encode(Model.LoadValue) %></li>
     </ul>
     
-    <p class="clear"><%=Html.ActionLink("Return to Inventory List", "Index") %></p>
+    <p class="clear"><%=Html.ActionLink("Return to Inventory List", "Index", new {message = string.Empty}) %></p>
 </asp:Content>

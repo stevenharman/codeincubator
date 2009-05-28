@@ -379,3 +379,22 @@ div#title h1
 {
 	font-weight: bold;
 }
+
+#details UL
+{
+	list-style-type: none;
+}
+
+#details UL LI IMG
+{
+	margin: 0 12px 0 0;
+}
+
+#message
+{
+	height: 20px;
+	color: #5B0909;
+	margin: 2px 0 20px 0;
+	font-size: 1.1em;
+	font-weight: bold;
+}

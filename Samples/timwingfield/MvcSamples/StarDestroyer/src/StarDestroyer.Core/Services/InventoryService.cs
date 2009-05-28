@@ -9,6 +9,7 @@ namespace StarDestroyer.Core.Services
     {
         IList<AssaultItem> GetAllAssaultItems();
         AssaultItem GetAssaultItemById(int id);
+        AssaultItem SaveAssaultItem(AssaultItem item);
     }
 
     public class InventoryService : IInventoryService
@@ -29,6 +30,22 @@ namespace StarDestroyer.Core.Services
 
         public AssaultItem GetAssaultItemById(int id)
         {
+            return _repository.GetById(id);
+        }
+
+        public AssaultItem SaveAssaultItem(AssaultItem item)
+        {
+            int id;
+            if(item.Id > 0)
+            {
+                _repository.Update(item);
+                id = item.Id;
+            }
+            else
+            {
+                id = _repository.Save(item);
+            }
+
             return _repository.GetById(id);
         }
     }

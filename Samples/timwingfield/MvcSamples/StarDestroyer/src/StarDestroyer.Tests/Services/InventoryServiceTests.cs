@@ -73,7 +73,7 @@ namespace StarDestroyer.Tests.Services
         }
         
         [Test]
-        public void then_get_by_id_should_be_called_on_the_controller()
+        public void then_get_by_id_should_be_called_on_the_repository()
         {
             _repo.AssertWasCalled(x => x.GetById(2));
         }
@@ -83,5 +83,89 @@ namespace StarDestroyer.Tests.Services
         {
             _result.Description.ShouldEqual("AI2");
         }
+    }
+
+    public class When_saving_a_new_assault_item : Specification
+    {
+        private InventoryService _service;
+        private IRepository<AssaultItem> _repo;
+        private AssaultItem _item;
+
+        protected override void Before_each()
+        {
+            _item = new AssaultItem {Description = "Description", Type = "Type", LoadValue = 2};
+
+            _repo = Stub<IRepository<AssaultItem>>();
+            _repo.Stub(x => x.Save(_item)).Return(9);
+            _repo.Stub(x => x.GetById(9)).Return(_item);
+            
+            _service = new InventoryService(_repo);
+        }
+
+        protected override void Because()
+        {
+            _service.SaveAssaultItem(_item);
+        }
+
+        [Test]
+        public void then_save_should_be_called_on_the_repo()
+        {
+            _repo.AssertWasCalled(x => x.Save(_item));
+        }
+
+        [Test]
+        public void then_update_should_not_be_called_on_the_repo()
+        {
+            _repo.AssertWasNotCalled(x => x.Update(_item));   
+        }
+
+        [Test]
+        public void then_get_item_by_id_should_be_called_on_the_repo()
+        {
+            _repo.AssertWasCalled(x => x.GetById(9));
+        }
+
+    }
+
+    public class When_saving_an_existing_assault_item : Specification
+    {
+        private InventoryService _service;
+        private IRepository<AssaultItem> _repo;
+        private AssaultItem _item;
+
+        protected override void Before_each()
+        {
+            _item = new AssaultItem(9) { Description = "Description", Type = "Type", LoadValue = 2 };
+
+            _repo = Stub<IRepository<AssaultItem>>();
+            _repo.Stub(x => x.Save(_item)).Return(9);
+            _repo.Stub(x => x.GetById(9)).Return(_item);
+
+            _service = new InventoryService(_repo);
+        }
+
+        protected override void Because()
+        {
+            _service.SaveAssaultItem(_item);
+        }
+
+        [Test]
+        public void then_save_should_not_be_called_on_the_repo()
+        {
+            _repo.AssertWasNotCalled(x => x.Save(_item));
+        }
+
+        [Test]
+        public void then_update_should_be_called_on_the_repo()
+        {
+            _repo.AssertWasCalled(x => x.Update(_item));
+        }
+
+        [Test]
+        public void then_get_item_by_id_should_be_called_on_the_repo()
+        {
+            _repo.AssertWasCalled(x => x.GetById(9));
+        }
+
     }
 }

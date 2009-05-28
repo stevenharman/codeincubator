@@ -11,6 +11,7 @@ namespace StarDestroyer.Core.Repository
     {
         T GetById(int Id);
         int Save(T entity);
+        void Update(T entity);
         void Delete(T entity);
         IList<T> GetAll();
     }
@@ -39,6 +40,15 @@ namespace StarDestroyer.Core.Repository
             using (var session = _sessionFactory.OpenSession())
             {
                 return (int)session.Save(entity);
+            }
+        }
+
+        public void Update(T entity)
+        {
+            using (var session = _sessionFactory.OpenSession())
+            {
+                session.SaveOrUpdate(entity);
+                session.Flush();
             }
         }
 

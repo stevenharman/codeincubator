@@ -1,5 +1,7 @@
 using System.Web.Mvc;
+using MvcContrib;
 using MvcContrib.Attributes;
+using StarDestroyer.Core.Entities;
 using StarDestroyer.Core.Services;
 using StarDestroyer.Models;
 
@@ -16,9 +18,19 @@ namespace StarDestroyer.Controllers
             Service = service ?? new InventoryService();
         }
 
-        public ViewResult Index()
+        //public ViewResult Index()
+        //{
+        //    return View(new AssaultItemIndexModel {AssaultItems = Service.GetAllAssaultItems()});
+        //}
+
+        public ViewResult Index(string message)
         {
-            var model = Service.GetAllAssaultItems();
+            var model = new AssaultItemIndexModel
+                            {
+                                AssaultItems = Service.GetAllAssaultItems(), 
+                                Message = message
+                            };
+
             return View(model);
         }
 
@@ -32,10 +44,27 @@ namespace StarDestroyer.Controllers
             return View(model);
         }
 
-        [AcceptGet]
-        public ActionResult AjaxDetails(int? id)
+        [AcceptPost]
+        public ContentResult AjaxDetails(int? id)
         {
-            return View();
+            return Content(Service.GetAssaultItemById(id.Value).ToDetailModel().ToDetailHtml());
+        }
+
+        [AcceptGet]
+        public ViewResult Edit(int id)
+        {
+            return View(Service.GetAssaultItemById(id));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Save(AssaultItem item)
+        {
+            //do save
+            Service.SaveAssaultItem(item);
+
+            var message = "Item saved successfully.";
+
+            return this.RedirectToAction(x => x.Index(message));
         }
     }
 }

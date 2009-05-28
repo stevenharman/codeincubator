@@ -24,7 +24,7 @@
             
                 <ul id="menu">              
                     <li><%= Html.ActionLink("Home", "Index", "Home")%></li>
-                    <li><%= Html.ActionLink("Assault Inventory", "Index", "Inventory")%></li>
+                    <li><%= Html.ActionLink("Assault Inventory", "Index", "Inventory", new { message = string.Empty }, null )%></li>
                     <li><%= Html.ActionLink("Landing Craft", "Index", "Assault")%></li>
                 </ul>
             
