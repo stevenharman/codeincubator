@@ -77,8 +77,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AssaultItemDetailModel.cs" />
+    <Compile Include="Models\AssaultItemEditModel.cs" />
     <Compile Include="Models\AssaultItemIndexModel.cs" />
+    <Compile Include="Models\AssaultShipIndexModel.cs" />
     <Compile Include="Models\ModelExtensions.cs" />
+    <Compile Include="Models\PartialRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +100,8 @@
     <Content Include="Content\Images\Stormtrooper_icon.png" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Assault\PartialViewB.ascx" />
+    <Content Include="Views\Assault\PartialViewOne.ascx" />
     <Content Include="Views\CreateDb\Index.aspx" />
     <Content Include="Views\Inventory\Details.aspx" />
     <Content Include="Views\Inventory\Edit.aspx" />

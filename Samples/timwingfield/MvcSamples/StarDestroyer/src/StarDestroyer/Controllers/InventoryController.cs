@@ -53,14 +53,21 @@ namespace StarDestroyer.Controllers
         [AcceptGet]
         public ViewResult Edit(int id)
         {
-            return View(Service.GetAssaultItemById(id));
+            return View(Service.GetAssaultItemById(id).ToAssaultItemEditModel());
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Save(AssaultItem item)
+        public ActionResult Save(AssaultItemEditModel item)
         {
             //do save
-            Service.SaveAssaultItem(item);
+            var assaultItem = new AssaultItem(item.Id)
+                                  {
+                                      Description = item.Description, 
+                                      Type = item.Type, 
+                                      LoadValue = item.LoadValue
+                                  };
+
+            Service.SaveAssaultItem(assaultItem);
 
             var message = "Item saved successfully.";
 

@@ -60,5 +60,16 @@ namespace StarDestroyer.Models
 
             return sb.ToString();
         }
+
+        public static AssaultItemEditModel ToAssaultItemEditModel(this AssaultItem item)
+        {
+            return new AssaultItemEditModel
+                        {
+                            Id = item.Id,
+                            Description = item.Description,
+                            Type = item.Type,
+                            LoadValue = item.LoadValue
+                        };
+        }
     }
 }
