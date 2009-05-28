@@ -424,9 +424,9 @@ namespace StarDestroyer.Tests.Controllers
         }
 
         [Test]
-        public void then_the_model_is_of_type_assault_item()
+        public void then_the_model_is_of_type_assault_item_edit_model()
         {
-            _viewData.GetType().ShouldEqual(typeof(AssaultItem));
+            _viewData.GetType().ShouldEqual(typeof(AssaultItemEditModel));
         }
     }
 
@@ -436,6 +436,46 @@ namespace StarDestroyer.Tests.Controllers
         public void then_save_assault_item_is_called_on_the_service()
         {
             
+        }
+    }
+
+    public class When_converting_an_assault_item_to_an_assault_item_edit_model : Specification
+    {
+        private AssaultItem _item;
+        private AssaultItemEditModel _model;
+
+        protected override void Before_each()
+        {
+            _item = new AssaultItem(2){Description = "my description", Type = "my type", LoadValue = 4};
+        }
+
+        protected override void Because()
+        {
+            _model = _item.ToAssaultItemEditModel();
+        }
+
+        [Test]
+        public void then_the_id_should_be_set()
+        {
+            _model.Id.ShouldEqual(_item.Id);
+        }
+
+        [Test]
+        public void then_the_description_should_be_set()
+        {
+            _model.Description.ShouldEqual(_item.Description);
+        }
+
+        [Test]
+        public void then_the_type_should_be_set()
+        {
+            _model.Type.ShouldEqual(_item.Type);
+        }
+
+        [Test]
+        public void then_the_load_value_should_be_set()
+        {
+            _model.LoadValue.ShouldEqual(_item.LoadValue);
         }
     }
 }

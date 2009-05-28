@@ -1,5 +1,5 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="MvcContrib.FluentHtml.ModelViewPage<AssaultItem>" %>
-<%@ Import Namespace="StarDestroyer.Core.Entities"%>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="MvcContrib.FluentHtml.ModelViewPage<AssaultItemEditModel>" %>
+<%@ Import Namespace="StarDestroyer.Models"%>
 <%@ Import Namespace="MvcContrib.FluentHtml"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
