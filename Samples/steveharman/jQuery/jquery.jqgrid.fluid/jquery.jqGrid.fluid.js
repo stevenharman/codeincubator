@@ -40,8 +40,8 @@
 
   Usage:
   
-  // make #some_grid 10 pixles smaller than #grid_wrapper
-  $("#some_grid").fluidGrid({ parent:"#grid_wrapper", offset:-10 });
+  // make #theGrid 10 pixles smaller than #grid_wrapper
+  $("#theGrid").fluidGrid({ parent:"#grid_wrapper", offset:-10 });
   
 */
 
