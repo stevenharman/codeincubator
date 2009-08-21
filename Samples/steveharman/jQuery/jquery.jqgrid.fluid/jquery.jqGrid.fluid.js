@@ -35,13 +35,15 @@
 
 /*
   Options:
-    base - a valid jQuery selector for the DOM element the grid will use to get a new base size
-    offset - the number of pixels added to the base size, giving the grid its new final size 
+    example - a valid jQuery selector for the DOM element the grid will use to get a new base size
+    offset - the number of pixels added to the width of the example element, giving the grid its new width
 
   Usage:
   
   // make #theGrid 10 pixles smaller than #grid_wrapper
-  $("#theGrid").fluidGrid({ base:"#grid_wrapper", offset:-10 });
+  $("#theGrid").fluidGrid({ example:"#grid_wrapper", offset:-10 });
+  
+  More Info: http://stevenharman.net/blog/archive/2009/08/21/creating-a-fluid-jquery-jqgrid.aspx
   
 */
 
@@ -52,11 +54,11 @@ jQuery.jgrid.fluid =
     var grid = $(this);
     var settings = $.extend(
                       {
-                        base: grid.parent,
+                        example: $('.ui-jqgrid', grid.parents()).parent(),
                         offset: 0
                       }, options || {});
 
-    var width = $(settings.base).innerWidth() + settings.offset;
+    var width = $(settings.example).innerWidth() + settings.offset;
     grid.setGridWidth(width);
   }
 }
