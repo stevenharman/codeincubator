@@ -54,7 +54,7 @@ jQuery.jgrid.fluid =
     var grid = $(this);
     var settings = $.extend(
                       {
-                        example: $('.ui-jqgrid', grid.parents()).parent(),
+                        example: grid.closest('.ui-jqgrid').parent(),
                         offset: 0
                       }, options || {});
 
