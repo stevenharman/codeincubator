@@ -18,7 +18,7 @@
     <script type="text/javascript">
       function resize_the_grid()
       {
-        $('#theGrid').fluidGrid({base:'#grid_wrapper', offset:-20})
+        $('#theGrid').fluidGrid({base:'#grid_wrapper', offset:-20});
       }
       
       $(document).ready(function(){
@@ -40,9 +40,9 @@
 			    height: "100%"
         });
 
-        myGrid.addRowData("1", {name:"Luke", side:"Good", power:"6"})
-        myGrid.addRowData("2", {name:"Vader", side:"Dark", power:"9"})
-        myGrid.addRowData("3", {name:"Han", side:"meh?", power:"0"})
+        myGrid.addRowData("1", {name:"Luke", side:"Good", power:"6"});
+        myGrid.addRowData("2", {name:"Vader", side:"Dark", power:"9"});
+        myGrid.addRowData("3", {name:"Han", side:"meh?", power:"0"});
         
         resize_the_grid();
       });
