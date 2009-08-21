@@ -4,3 +4,20 @@
   padding: 10px;
   width:50%;
 }
+
+#info_wrapper
+{
+  display:block;
+  float:left;
+  width: 17em;
+}
+
+.clear { clear:both; }
+.floatLeft { float:left; }
+.floatRight { float:right; }
+
+/* === Additions to jQuery UI Theme === */
+.ui-state-highlight
+{
+  font-size:.7em;
+}
