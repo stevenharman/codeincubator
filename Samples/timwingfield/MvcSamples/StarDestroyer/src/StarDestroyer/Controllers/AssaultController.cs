@@ -9,9 +9,19 @@ namespace StarDestroyer.Controllers
         public ActionResult Index()
         {
             var model = new AssaultShipIndexModel();
-            model.PartialOne = new PartialRequest(new {action = "PartialViewOne", controller = "Assault"});
+            model.PartialOne = new PartialRequest(new { action = "PartialViewOne", controller = "Assault" });
             model.PartialB = new PartialRequest(new { action = "PartialViewB", controller = "Assault" });
             return View(model);
+        }
+
+        public ViewResult PartialViewOne()
+        {
+            return View("PartialViewOne");
+        }
+
+        public ViewResult PartialViewB()
+        {
+            return View();
         }
     }
 }

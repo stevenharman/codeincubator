@@ -11,8 +11,8 @@
     <p>This text is on index.aspx</p>
     
     <% 
-        var partial1 = new PartialRequest(Model.PartialOne);
-        partial1.Inoke(ViewContext);
+        ((PartialRequest)Model.PartialOne).Invoke(ViewContext);
+        ((PartialRequest)Model.PartialB).Invoke(ViewContext);
     %>
 
 </asp:Content>

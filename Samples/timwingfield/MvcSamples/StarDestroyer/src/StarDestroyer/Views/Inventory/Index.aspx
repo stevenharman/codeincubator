@@ -27,7 +27,7 @@
                     <%=Html.Encode(item.Type) %>
                 </td>
                 <td>
-                    <%=Html.ActionLink("Details", "Details", new { id = item.Id }) %>
+                    <a href="javascript: ItemDetail(<%= item.Id %>)">Details</a>
                 </td>
                 <td>
                     <%=Html.ActionLink("Edit", "Edit", new { id = item.Id }) %>
