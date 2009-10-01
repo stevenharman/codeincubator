@@ -6,23 +6,20 @@ namespace StarDestroyer.Models
 {
     public class PartialRequest
     {
-        public RouteValueDictionary RouteValues { get; set; }
+        public RouteValueDictionary RouteValues { get; private set; }
 
         public PartialRequest(object routeValues)
         {
             RouteValues = new RouteValueDictionary(routeValues);
         }
 
-        public void Inoke(ControllerContext context)
+        public void Invoke(ControllerContext context)
         {
-            var rd = new RouteData {Route = context.RouteData.Route, RouteHandler = context.RouteData.RouteHandler};
+            RouteData rd = new RouteData(context.RouteData.Route, context.RouteData.RouteHandler);
             foreach (var pair in RouteValues)
-            {
                 rd.Values.Add(pair.Key, pair.Value);
-            }
-
             IHttpHandler handler = new MvcHandler(new RequestContext(context.HttpContext, rd));
-            handler.ProcessRequest(HttpContext.Current);
+            handler.ProcessRequest(System.Web.HttpContext.Current);
         }
     }
 }

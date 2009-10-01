@@ -1,0 +1,18 @@
+﻿<h2>${Html.Encode(ViewData["Message"])}</h2>
+To learn more about ASP.NET MVC visit
+<a title="ASP.NET MVC Website" href="http://asp.net/mvc">http://asp.net/mvc</a>.
+
+<div>
+    <p>Diggin' on <span>Spark!</span></p>
+    <p>${"Hello World"}</p>
+</div>
+<div>
+<var names="new [] {'alpha', 'beta', 'gamma'}"/>
+<for each="var name in names">
+  <test if="name == 'beta'">
+    <p>beta is my favorite.</p>
+    <else/>
+    <p>${name} is okay too I suppose. 
+  </test>
+</for>
+</div>
