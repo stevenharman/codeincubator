@@ -17,6 +17,11 @@ namespace StarDestroyer
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "StarWarsProducts",
+                "product/{productname}",
+                new {controller = "Product", action = "Search"});
+
+            routes.MapRoute(
                 "Default",                                              // Route name
                 "{controller}/{action}/{id}",                           // URL with parameters
                 new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
