@@ -9,7 +9,7 @@ namespace StarDestroyer.Helpers.Filters
     {
         private ISuggestionRepository _suggestionRepository;
 
-        public RequiresSuggestionsFilterAttribute() : this(new SuggestionRepository())
+        public RequiresSuggestionsFilterAttribute() : this(new SuggestionRepository()) 
         {
         }
 

@@ -70,6 +70,13 @@
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\AssaultController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="DarkSide\Sith.aspx.cs">
+      <DependentUpon>Sith.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DarkSide\Sith.aspx.designer.cs">
+      <DependentUpon>Sith.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -88,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\Imperial_Emblem_white_80.png" />
+    <Content Include="Content\Images\sith.jpg" />
     <Content Include="Content\Images\speeder_bike.jpg" />
     <Content Include="Content\Images\Alpha956.jpg" />
     <Content Include="Content\Images\at_st.jpg" />
@@ -100,6 +108,7 @@
     <Content Include="Content\Images\Shock_trooper_icon.png" />
     <Content Include="Content\Images\star_destroyer_poster.JPG" />
     <Content Include="Content\Images\Stormtrooper_icon.png" />
+    <Content Include="DarkSide\Sith.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Views\Assault\PartialViewB.ascx" />
