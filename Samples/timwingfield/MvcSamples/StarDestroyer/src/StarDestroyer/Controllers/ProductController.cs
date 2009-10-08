@@ -1,5 +1,6 @@
 using System;
 using System.Web.Mvc;
+using StarDestroyer.Helpers.Filters;
 
 namespace StarDestroyer.Controllers
 {
@@ -17,6 +18,7 @@ namespace StarDestroyer.Controllers
             _productRepository = productRepository ?? new ProductRepository();
         }
 
+        [RequiresSuggestionsFilter]
         public ActionResult Search(string productName)
         {
             var product = _productRepository.GetProduct(productName);

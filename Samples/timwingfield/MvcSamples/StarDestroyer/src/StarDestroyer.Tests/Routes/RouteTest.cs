@@ -13,6 +13,12 @@ namespace StarDestroyer.Tests.Routes
             base.Before_each();
         }
 
+        protected override void After_each()
+        {
+            RouteTable.Routes.Clear();
+            base.After_each();
+        }
+
         [Test]
         public void Should_map_blank_url_to_home()
         {
@@ -22,7 +28,7 @@ namespace StarDestroyer.Tests.Routes
         [Test]
         public void Product_searches_should_map_to_the_product_search_action()
         {
-            "~/Product/Something".Route().ShouldMapTo<ProductController>(c => c.Search("Something"));
+                "~/Product/Something".Route().ShouldMapTo<ProductController>(c => c.Search("Something"));
         }
     }
 }

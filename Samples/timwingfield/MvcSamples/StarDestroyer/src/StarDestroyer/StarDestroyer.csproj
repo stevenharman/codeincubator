@@ -77,6 +77,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Filters\RequiresSuggestionsFilterAttribute.cs" />
     <Compile Include="Models\AssaultItemDetailModel.cs" />
     <Compile Include="Models\AssaultItemEditModel.cs" />
     <Compile Include="Models\AssaultItemIndexModel.cs" />
