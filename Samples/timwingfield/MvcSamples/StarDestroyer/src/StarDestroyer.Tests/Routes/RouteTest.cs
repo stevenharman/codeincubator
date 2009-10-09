@@ -26,9 +26,21 @@ namespace StarDestroyer.Tests.Routes
         }
 
         [Test]
+        public void Should_map_inventory_details_to_inventory_controller_and_details_action()
+        {
+            "~/inventory/edit/1".Route().ShouldMapTo<InventoryController>(c => c.Edit(1));
+        }
+
+        [Test]
         public void Product_searches_should_map_to_the_product_search_action()
         {
-                "~/Product/Something".Route().ShouldMapTo<ProductController>(c => c.Search("Something"));
+            "~/Something".Route().ShouldMapTo<ProductController>(c => c.Search("Something"));
+        }
+
+        [Test]
+        public void Requests_on_the_product_controller_should_be_default_route_if_not_searching_by_product()
+        {
+            "~/Product/Catalog".Route().ShouldMapTo<ProductController>(c => c.Catalog());
         }
     }
 }

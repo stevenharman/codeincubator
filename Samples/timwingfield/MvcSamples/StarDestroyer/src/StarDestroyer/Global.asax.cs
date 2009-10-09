@@ -19,8 +19,8 @@ namespace StarDestroyer
 
             routes.MapRoute(
                 "StarWarsProducts",
-                "product/{productname}",
-                new {controller = "Product", action = "Search"});
+                "{productname}",
+                new { controller = "Product", action = "Search" });
 
             routes.MapRoute(
                 "Default",                                              // Route name
