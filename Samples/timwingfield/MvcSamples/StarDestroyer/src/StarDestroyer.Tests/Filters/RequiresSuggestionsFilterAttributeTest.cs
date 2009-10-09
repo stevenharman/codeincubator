@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using NUnit.Framework;
-using StarDestroyer.Controllers;
 using StarDestroyer.Helpers.Filters;
 using Rhino.Mocks;
 using NBehave.Spec.NUnit;
 using MvcContrib;
 using System.Linq;
+using StarDestroyer.Models;
 
 namespace StarDestroyer.Tests.Filters
 {
@@ -15,7 +15,7 @@ namespace StarDestroyer.Tests.Filters
     {
         protected ActionExecutingContext _actionExecutingContext;
         protected ISuggestionRepository _suggestionRepository;
-        protected List<Product> _fakeProducts;
+        protected List<ProductModel> _fakeProducts;
         protected RequiresSuggestionsFilterAttribute _filterToTest;
 
         protected override void Before_each()
@@ -33,9 +33,9 @@ namespace StarDestroyer.Tests.Filters
 
         private void CreateFakes()
         {
-            _fakeProducts = new List<Product>()
+            _fakeProducts = new List<ProductModel>()
                                 {
-                                    new Product(){Description = "cherry", Name = "pie"}
+                                    new ProductModel(){Description = "cherry", Name = "pie"}
                                 };
             _suggestionRepository = Stub<ISuggestionRepository>();
             _suggestionRepository.Stub(x => x.GetSuggestedProducts()).Return(_fakeProducts);

@@ -5,6 +5,7 @@ using StarDestroyer.Controllers;
 using Rhino.Mocks;
 using MvcContrib.TestHelper;
 using NBehave.Spec.NUnit;
+using StarDestroyer.Models;
 
 namespace StarDestroyer.Tests.Controllers
 {
@@ -13,7 +14,7 @@ namespace StarDestroyer.Tests.Controllers
         private ProductController _productController;
         private ActionResult _actionResult;
         private IProductRepository _productRepository;
-        private Product _fakeProduct;
+        private ProductModel _fakeProductModel;
         private const string PRODUCT_NAME = "SomeProductName";
 
         protected override void Before_each()
@@ -26,9 +27,9 @@ namespace StarDestroyer.Tests.Controllers
 
         private void PrepareFakes()
         {
-            _fakeProduct = new Product() {Description = "PIE!", Name = "Chocolate"};
+            _fakeProductModel = new ProductModel() {Description = "PIE!", Name = "Chocolate"};
             _productRepository = Stub<IProductRepository>();
-            _productRepository.Stub(x => x.GetProduct(PRODUCT_NAME)).Return(_fakeProduct);
+            _productRepository.Stub(x => x.GetProduct(PRODUCT_NAME)).Return(_fakeProductModel);
         }
 
         protected override void Because()
@@ -46,13 +47,13 @@ namespace StarDestroyer.Tests.Controllers
         [Test]
         public void Then_the_search_view_should_be_displayed_to_the_user()
         {
-            _actionResult.AssertViewRendered().ForView("Search").WithViewData<Product>();
+            _actionResult.AssertViewRendered().ForView("Search").WithViewData<ProductModel>();
         }
 
         [Test]
         public void Then_the_correct_product_should_be_displayed_to_the_user()
         {
-            var productToView = ((ViewResult) _actionResult).ViewData.Model as Product;
+            var productToView = ((ViewResult) _actionResult).ViewData.Model as ProductModel;
             productToView.Description.ShouldEqual("PIE!");
         }
 

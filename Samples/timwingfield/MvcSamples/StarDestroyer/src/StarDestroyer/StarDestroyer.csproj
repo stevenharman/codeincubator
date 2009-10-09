@@ -69,6 +69,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\AssaultController.cs" />
+    <Compile Include="Models\ProductListingModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DarkSide\Sith.aspx.cs">
       <DependentUpon>Sith.aspx</DependentUpon>
@@ -85,6 +87,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Filters\RequiresSuggestionsFilterAttribute.cs" />
+    <Compile Include="Helpers\HTML\ComplexDisplayHelper.cs" />
     <Compile Include="Models\AssaultItemDetailModel.cs" />
     <Compile Include="Models\AssaultItemEditModel.cs" />
     <Compile Include="Models\AssaultItemIndexModel.cs" />
@@ -118,6 +121,7 @@
     <Content Include="Views\Inventory\Edit.aspx" />
     <Content Include="Views\Inventory\Index.aspx" />
     <Content Include="Views\Assault\Index.aspx" />
+    <Content Include="Views\Product\Catalog.aspx" />
     <Content Include="Views\Product\Search.aspx" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
