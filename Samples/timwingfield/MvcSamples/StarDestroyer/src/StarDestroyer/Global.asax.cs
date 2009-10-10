@@ -21,7 +21,7 @@ namespace StarDestroyer
                 "Default",                                              // Route name
                 "{controller}/{action}/{id}",                           // URL with parameters
                 new { controller = "Home", action = "Index", id = "" }, // Parameter defaults
-                new { controller = @"inventory|home|assault|account|product" }
+                new { controller = @"inventory|home|assault|account|product|createdb" }
             );
 
             routes.MapRoute(
