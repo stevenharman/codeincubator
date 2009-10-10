@@ -8,6 +8,7 @@ using StarDestroyer.Controllers;
 using StarDestroyer.Core.Entities;
 using StarDestroyer.Core.Services;
 using StarDestroyer.Models;
+using MvcContrib.TestHelper;
 
 namespace StarDestroyer.Tests.Controllers
 {
@@ -286,7 +287,7 @@ namespace StarDestroyer.Tests.Controllers
 
     public class When_calling_the_AjaxDetails_action_with_an_id : Specification
     {
-        private ContentResult _result;
+        private PartialViewResult _result;
         private InventoryController _controller;
         private IInventoryService _service;
         private AssaultItem _item;
@@ -318,21 +319,27 @@ namespace StarDestroyer.Tests.Controllers
         }
 
         [Test]
-        public void then_the_view_model_should_be_of_type_string()
+        public void then_a_partial_view_should_be_returned()
         {
-            _result.Content.ShouldBeInstanceOfType(typeof (string));
+            _result.AssertPartialViewRendered().ForView("InventoryDetails").WithViewData<AssaultItemDetailModel>();
+        }
+
+        [Test]
+        public void then_the_view_model_should_be_of_type_AssaultItemDetailModel()
+        {
+            _result.ViewData.Model.ShouldBeInstanceOfType(typeof(AssaultItemDetailModel));
         }
 
         [Test]
         public void then_the_content_should_contain_html_for_an_image()
         {
-            _result.Content.Contains("<img src=\"../../Content/Images/Dark_trooper_icon.png\"").ShouldBeTrue();
+            ((AssaultItemDetailModel)_result.ViewData.Model).Images.Contains("Dark_trooper_icon.png").ShouldBeTrue();
         }
 
         [Test]
         public void then_the_content_should_contain_html_for_a_description()
         {
-            _result.Content.Contains(string.Format("<li><strong>Description:</strong> {0}</li>", _item.Description)).ShouldBeTrue();
+            ((AssaultItemDetailModel) _result.ViewData.Model).Description.ShouldEqual(_item.Description);
         }
     }
 

@@ -32,6 +32,12 @@ namespace StarDestroyer.Tests.Routes
         }
 
         [Test]
+        public void The_default_action_for_controllers_should_be_index()
+        {
+            "~/inventory".Route().ShouldMapTo<InventoryController>(c => c.Index(null));
+        }
+
+        [Test]
         public void Product_searches_should_map_to_the_product_search_action()
         {
             "~/Something".Route().ShouldMapTo<ProductController>(c => c.Search("Something"));
