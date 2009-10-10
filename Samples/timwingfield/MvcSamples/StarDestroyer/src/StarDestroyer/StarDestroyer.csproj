@@ -152,6 +152,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="StarDestroyerCLAIMS.db" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Database\" />
   </ItemGroup>

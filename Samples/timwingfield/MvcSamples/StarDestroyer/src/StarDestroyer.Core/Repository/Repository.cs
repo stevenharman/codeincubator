@@ -71,7 +71,7 @@ namespace StarDestroyer.Core.Repository
 
         private static ISessionFactory CreateSessionFactory()
         {
-            const string dbFile = "StarDestroyerCLAIMS.db";
+            const string dbFile = @"StarDestroyerCLAIMS.db";
 
             return Fluently.Configure()
                 .Database(SQLiteConfiguration.Standard
