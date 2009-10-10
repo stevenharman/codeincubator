@@ -121,6 +121,7 @@
     <Content Include="Views\Inventory\Edit.aspx" />
     <Content Include="Views\Inventory\Index.aspx" />
     <Content Include="Views\Assault\Index.aspx" />
+    <Content Include="Views\Inventory\InventoryDetails.ascx" />
     <Content Include="Views\Product\Catalog.aspx" />
     <Content Include="Views\Product\Search.aspx" />
     <Content Include="Web.config" />

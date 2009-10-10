@@ -18,15 +18,16 @@ namespace StarDestroyer
             routes.IgnoreRoute("{resource}.aspx/{*pathInfo}");
 
             routes.MapRoute(
+                "Default",                                              // Route name
+                "{controller}/{action}/{id}",                           // URL with parameters
+                new { controller = "Home", action = "Index", id = "" }, // Parameter defaults
+                new { controller = @"inventory|home|assault|account|product" }
+            );
+
+            routes.MapRoute(
                 "StarWarsProducts",
                 "{productname}",
                 new { controller = "Product", action = "Search" });
-
-            routes.MapRoute(
-                "Default",                                              // Route name
-                "{controller}/{action}/{id}",                           // URL with parameters
-                new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
-            );
 
         }
 

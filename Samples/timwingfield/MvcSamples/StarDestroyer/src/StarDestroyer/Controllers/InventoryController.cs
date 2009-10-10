@@ -44,10 +44,16 @@ namespace StarDestroyer.Controllers
             return View(model);
         }
 
+        //[AcceptPost]
+        //public ContentResult AjaxDetails(int? id)
+        //{
+        //    return Content(Service.GetAssaultItemById(id.Value).ToDetailModel().ToDetailHtml());
+        //}
+
         [AcceptPost]
-        public ContentResult AjaxDetails(int? id)
+        public PartialViewResult AjaxDetails(int? id)
         {
-            return Content(Service.GetAssaultItemById(id.Value).ToDetailModel().ToDetailHtml());
+            return PartialView("InventoryDetails", Service.GetAssaultItemById(id.Value).ToDetailModel());
         }
 
         [AcceptGet]
