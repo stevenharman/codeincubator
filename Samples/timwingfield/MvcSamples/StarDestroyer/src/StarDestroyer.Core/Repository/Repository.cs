@@ -23,7 +23,7 @@ namespace StarDestroyer.Core.Repository
 
     public class Repository<T> : IRepository<T>
     {
-        private ISessionFactory _sessionFactory;
+        protected ISessionFactory _sessionFactory;
 
         public Repository() : this(CreateSessionFactory()) { }
 
@@ -82,7 +82,7 @@ namespace StarDestroyer.Core.Repository
             }
         }
 
-        private static ISessionFactory CreateSessionFactory()
+        protected static ISessionFactory CreateSessionFactory()
         {
             string dbFile = ConfigurationManager.AppSettings["DBFile"] as string;
 

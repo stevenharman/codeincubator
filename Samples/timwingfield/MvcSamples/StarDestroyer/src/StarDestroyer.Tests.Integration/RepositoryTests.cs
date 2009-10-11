@@ -8,6 +8,7 @@ using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using NUnit.Framework;
 using StarDestroyer.Core.Entities;
+using StarDestroyer.Core.Helpers;
 using StarDestroyer.Core.Repository;
 
 namespace StarDestroyer.Tests.Integration
@@ -136,6 +137,30 @@ namespace StarDestroyer.Tests.Integration
         public void then_the_result_item_should_not_be_null()
         {
             _result.ShouldNotBeNull();
+        }
+    }
+
+    public class When_using_the_product_repository_to_search_for_projects : And_setting_up_the_temporary_database
+    {
+        private ProductRepository _repo;
+        private List<Product> _searchResults;
+
+        protected override void Before_each()
+        {
+            base.Before_each();
+            _repo = new ProductRepository();
+        }
+
+        protected override void Because()
+        {
+            _searchResults =
+                _repo.SearchProducts(new SearchParameters() {Ascending = true, Count = 2, Page = 1, SortColumn = "Name"});
+        }
+
+        [Test]
+        public void then_the_returned_list_should_be_sorted_and_paged_as_requested()
+        {
+            _searchResults.Count.ShouldEqual(2);
         }
     }
 

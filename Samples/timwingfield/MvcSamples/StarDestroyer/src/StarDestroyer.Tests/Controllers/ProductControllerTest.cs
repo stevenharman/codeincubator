@@ -18,7 +18,7 @@ namespace StarDestroyer.Tests.Controllers
     {
         private ProductController _productController;
         private ActionResult _actionResult;
-        private IRepository<Product> _productRepository;
+        private IProductRepository _productRepository;
         private List<Product> _fakeProducts;
         private const string PRODUCT_NAME = "SomeProductName";
 
@@ -33,7 +33,7 @@ namespace StarDestroyer.Tests.Controllers
         private void PrepareFakes()
         {
             _fakeProducts = new List<Product>() { new Product() { Description = "PIE!", ShortName = PRODUCT_NAME } };
-            _productRepository = Stub<IRepository<Product>>();
+            _productRepository = Stub<IProductRepository>();
             _productRepository.Expect(x => x.Where(Arg<Expression<Func<Product,bool>>>.Is.Anything)).Return(_fakeProducts);
         }
 

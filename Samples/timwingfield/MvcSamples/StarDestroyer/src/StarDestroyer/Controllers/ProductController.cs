@@ -7,12 +7,13 @@ using StarDestroyer.Core.Repository;
 using StarDestroyer.Helpers.Filters;
 using StarDestroyer.Models;
 using System.Linq;
+using StarDestroyer.Models;
 
 namespace StarDestroyer.Controllers
 {
     public class ProductController : Controller
     {
-        private IRepository<Product> _productRepository;
+        private IProductRepository _productRepository;
 
         public ProductController()
             : this(null)
@@ -20,9 +21,9 @@ namespace StarDestroyer.Controllers
 
         }
 
-        public ProductController(IRepository<Product> productRepository)
+        public ProductController(IProductRepository productRepository)
         {
-            _productRepository = productRepository ?? new Repository<Product>();
+            _productRepository = productRepository ?? new ProductRepository();
         }
 
         [RequiresSuggestionsFilter]
@@ -34,10 +35,38 @@ namespace StarDestroyer.Controllers
         }
 
         [AcceptGet()]
+        public ActionResult List(JQGridRequestModel gridRequest) 
+        {
+            
+
+            var jsonData = new
+            {
+                total = 1, // we'll implement later 
+                page = gridRequest.page,
+                records = 3, // implement later 
+                rows = new[]{
+                      new {id = 1, cell = new[] {"1", "-7", "Is this a good question?"}},
+                      new {id = 2, cell = new[] {"2", "15", "Is this a blatant ripoff?"}},
+                      new {id = 3, cell = new[] {"3", "23", "Why is the sky blue?"}}
+                    }
+            };
+            return Json(jsonData);
+        }
+
+        [AcceptGet()]
         public ActionResult Catalog()
         {
             var products = _productRepository.GetAll();
-            return View(products);
+            return View(products.ToProductListingModel());
         }
+
+    }
+
+    public class JQGridRequestModel
+    {
+        public string sidx { get; set; }
+        public string sord { get; set; }
+        public int page { get; set; }
+        public int rows { get; set; }
     }
 }

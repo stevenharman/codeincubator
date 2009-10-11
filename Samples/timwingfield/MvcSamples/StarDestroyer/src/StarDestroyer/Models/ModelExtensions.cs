@@ -81,7 +81,7 @@ namespace StarDestroyer.Models
                        };
         }
 
-        public static List<ProductListingModel> ToProductListingModel(this List<Product> products)
+        public static List<ProductListingModel> ToProductListingModel(this IList<Product> products)
         {
             var productListingModels = new List<ProductListingModel>();
 
