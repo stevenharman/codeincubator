@@ -15,7 +15,7 @@ namespace StarDestroyer.Core.Mappings
                 .Cascade
                 .All()
                 .Inverse()
-                .WithTableName("ShipInventory");
+                .Table("ShipInventory");
         }
     }
 }

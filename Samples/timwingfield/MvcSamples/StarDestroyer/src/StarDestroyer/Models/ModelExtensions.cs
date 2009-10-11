@@ -71,5 +71,31 @@ namespace StarDestroyer.Models
                             LoadValue = item.LoadValue
                         };
         }
+
+        public static ProductModel ToProductModel(this Product product)
+        {
+            return new ProductModel()
+                       {
+                           Description = product.Description,
+                           Name = product.Name
+                       };
+        }
+
+        public static List<ProductListingModel> ToProductListingModel(this List<Product> products)
+        {
+            var productListingModels = new List<ProductListingModel>();
+
+            foreach (var product in products)
+            {
+                productListingModels.Add(new ProductListingModel()
+                     {
+                         InStock = product.InStock,
+                         Name = product.Name,
+                         Price = product.Price
+                     });
+            }
+
+            return productListingModels;
+        }
     }
 }
