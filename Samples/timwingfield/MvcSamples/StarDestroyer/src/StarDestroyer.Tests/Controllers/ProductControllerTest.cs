@@ -1,11 +1,16 @@
 using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Web.Mvc;
 using NUnit.Framework;
 using StarDestroyer.Controllers;
 using Rhino.Mocks;
 using MvcContrib.TestHelper;
 using NBehave.Spec.NUnit;
+using StarDestroyer.Core.Entities;
+using StarDestroyer.Core.Repository;
 using StarDestroyer.Models;
+using System.Linq;
 
 namespace StarDestroyer.Tests.Controllers
 {
@@ -13,23 +18,23 @@ namespace StarDestroyer.Tests.Controllers
     {
         private ProductController _productController;
         private ActionResult _actionResult;
-        private IProductRepository _productRepository;
-        private ProductModel _fakeProductModel;
+        private IRepository<Product> _productRepository;
+        private List<Product> _fakeProducts;
         private const string PRODUCT_NAME = "SomeProductName";
 
         protected override void Before_each()
         {
             PrepareFakes();
-            
+
             _productController = new ProductController(_productRepository);
             base.Before_each();
         }
 
         private void PrepareFakes()
         {
-            _fakeProductModel = new ProductModel() {Description = "PIE!", Name = "Chocolate"};
-            _productRepository = Stub<IProductRepository>();
-            _productRepository.Stub(x => x.GetProduct(PRODUCT_NAME)).Return(_fakeProductModel);
+            _fakeProducts = new List<Product>() { new Product() { Description = "PIE!", ShortName = PRODUCT_NAME } };
+            _productRepository = Stub<IRepository<Product>>();
+            _productRepository.Expect(x => x.Where(Arg<Expression<Func<Product,bool>>>.Is.Anything)).Return(_fakeProducts);
         }
 
         protected override void Because()
@@ -41,7 +46,7 @@ namespace StarDestroyer.Tests.Controllers
         [Test]
         public void Then_the_product_repository_should_be_queried()
         {
-            _productRepository.AssertWasCalled(x => x.GetProduct(PRODUCT_NAME));
+            _productRepository.AssertWasCalled(x => x.Where(Arg<Expression<Func<Product, bool>>>.Is.Anything));
         }
 
         [Test]
@@ -53,7 +58,7 @@ namespace StarDestroyer.Tests.Controllers
         [Test]
         public void Then_the_correct_product_should_be_displayed_to_the_user()
         {
-            var productToView = ((ViewResult) _actionResult).ViewData.Model as ProductModel;
+            var productToView = ((ViewResult)_actionResult).ViewData.Model as ProductModel;
             productToView.Description.ShouldEqual("PIE!");
         }
 

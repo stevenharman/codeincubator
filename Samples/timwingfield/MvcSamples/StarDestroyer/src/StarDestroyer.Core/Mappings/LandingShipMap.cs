@@ -13,7 +13,7 @@ namespace StarDestroyer.Core.Mappings
             HasManyToMany(x => x.AssaultItems)
                 .Cascade
                 .All()
-                .WithTableName("ShipInventory");
+                .Table("ShipInventory");
         }
     }
 }

@@ -2,14 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using MvcContrib.Attributes;
+using StarDestroyer.Core.Entities;
+using StarDestroyer.Core.Repository;
 using StarDestroyer.Helpers.Filters;
 using StarDestroyer.Models;
+using System.Linq;
 
 namespace StarDestroyer.Controllers
 {
     public class ProductController : Controller
     {
-        private IProductRepository _productRepository;
+        private IRepository<Product> _productRepository;
 
         public ProductController()
             : this(null)
@@ -17,48 +20,24 @@ namespace StarDestroyer.Controllers
 
         }
 
-        public ProductController(IProductRepository productRepository)
+        public ProductController(IRepository<Product> productRepository)
         {
-            _productRepository = productRepository ?? new ProductRepository();
+            _productRepository = productRepository ?? new Repository<Product>();
         }
 
         [RequiresSuggestionsFilter]
         public ActionResult Search(string productName)
         {
-            var product = _productRepository.GetProduct(productName);
+            var product = _productRepository.Where(x => x.ShortName == productName).FirstOrDefault();
 
-            return View("Search", product);
+            return View("Search", product.ToProductModel());
         }
 
         [AcceptGet()]
         public ActionResult Catalog()
         {
-            var products = _productRepository.GetProductCatalog();
+            var products = _productRepository.GetAll();
             return View(products);
-        }
-    }
-
-    public interface IProductRepository
-    {
-        ProductModel GetProduct(string productName);
-        List<ProductListingModel> GetProductCatalog();
-    }
-
-    public class ProductRepository : IProductRepository
-    {
-        public ProductModel GetProduct(string productName)
-        {
-            return new ProductModel() { Description = productName + " description", Name = productName };
-        }
-
-        public List<ProductListingModel> GetProductCatalog()
-        {
-            return new List<ProductListingModel>()
-                       {
-                           new ProductListingModel() {InStock = true, Name = "Rebellion Era Campaign Guide", Price = 23.99m},
-                           new ProductListingModel() {InStock = true, Name = "The Clone Wars Map Pack 2", Price = 33.11m},
-                           new ProductListingModel() {InStock = false, Name = "Jedi Academy Booster Pack", Price = 2.99m}
-                       };
         }
     }
 }

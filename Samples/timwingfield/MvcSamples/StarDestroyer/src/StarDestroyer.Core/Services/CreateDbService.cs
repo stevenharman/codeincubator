@@ -1,17 +1,18 @@
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
-using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using StarDestroyer.Core.Entities;
+using Configuration = NHibernate.Cfg.Configuration;
 
 namespace StarDestroyer.Core.Services
 {
     public class CreateDbService
     {
-        const string dbFile = "StarDestroyerCLAIMS.db";
+        static string dbFile = ConfigurationManager.AppSettings["DBFile"] as string;
 
         public int CreateDb()
         {
@@ -22,6 +23,7 @@ namespace StarDestroyer.Core.Services
                 using (var trx = session.BeginTransaction())
                 {
                     #region trooplist
+
                     var troopList = new List<AssaultItem>
                                         {
                                             new AssaultItem
@@ -74,6 +76,7 @@ namespace StarDestroyer.Core.Services
                                                 LoadValue = 4,
                                                 Type = "Standard Stormtrooper Sqaud"
                                             };
+
                     #endregion
 
                     foreach (var item in troopList)
@@ -83,18 +86,62 @@ namespace StarDestroyer.Core.Services
 
                     for (int i = 0; i < 11; i++)
                     {
-                        var s = new LandingShip {Designation = string.Format("LS11{0}", i), Deployed = false};
+                        var s = new LandingShip { Designation = string.Format("LS11{0}", i), Deployed = false };
                         session.SaveOrUpdate(s);
-			        }
+                    }
 
-                    var landingShip = new LandingShip {Deployed = true, Designation = "LS1138"};
+                    var landingShip = new LandingShip { Deployed = true, Designation = "LS1138" };
                     landingShip.AddAssaultItem(shockTroopers);
                     landingShip.AddAssaultItem(stormtroopers);
 
                     session.SaveOrUpdate(landingShip);
-                    
+
+                    var products = new List<Product>()
+                                       {
+                                           new Product()
+                                               {
+                                                   Description = "Not your daddy's light saber.",
+                                                   InStock = true,
+                                                   Name = "Asajj Ventress Force FX Saber",
+                                                   Price = 22.99m,
+                                                   ShortName = "ForceFXSaber"
+                                               },
+                                           new Product()
+                                               {
+                                                   Description = "A replica of the original.",
+                                                   InStock = true,
+                                                   Name = "Anakin Skywalker Lightsaber",
+                                                   Price = 22.99m,
+                                                   ShortName = "SkywalkerLightsaber"
+                                               },
+                                           new Product()
+                                               {
+                                                   Description = "The perfect balance of weight and performance.",
+                                                   InStock = true,
+                                                   Name = "Ahsoka Lightsaber",
+                                                   Price = 22.99m,
+                                                   ShortName = "AhsokaLightsaber"
+                                               },                                           
+                                            new Product()
+                                               {
+                                                   Description = "Secure your battleship with one of the finest.",
+                                                   InStock = true,
+                                                   Name = "Senate Security Clone",
+                                                   Price = 22.99m,
+                                                   ShortName = "SenateSecurityClone"
+                                               },
+                                       };
+
+                    foreach (var product in products)
+                    {
+                        session.SaveOrUpdate(product);
+                    }
+
                     trx.Commit();
+
+
                 }
+
             }
 
             int count;
@@ -103,7 +150,7 @@ namespace StarDestroyer.Core.Services
             {
                 using (var trx = session.BeginTransaction())
                 {
-                    var items = session.CreateCriteria(typeof (AssaultItem)).List<AssaultItem>();
+                    var items = session.CreateCriteria(typeof(AssaultItem)).List<AssaultItem>();
                     count = items.Count;
                 }
             }
