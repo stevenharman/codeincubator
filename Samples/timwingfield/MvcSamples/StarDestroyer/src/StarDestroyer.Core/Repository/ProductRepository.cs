@@ -27,7 +27,9 @@ namespace StarDestroyer.Core.Repository
 
                 var query = (searchParams.Ascending ? "asc" : "desc");
 
-                searchResult.Items = source.OrderBy(searchParams.SortColumn + " " + query).Skip((searchParams.Page - 1) * searchParams.Count).Take(searchParams.Count).ToList();
+                searchResult.Items = source.OrderBy(searchParams.SortColumn + " " + query)
+                    .Skip((searchParams.Page - 1) * searchParams.Count)
+                    .Take(searchParams.Count).ToList();
             }
 
             return searchResult;
