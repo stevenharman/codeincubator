@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using MvcContrib.Attributes;
 using StarDestroyer.Core.Entities;
+using StarDestroyer.Core.Helpers;
 using StarDestroyer.Core.Repository;
 using StarDestroyer.Helpers.Filters;
 using StarDestroyer.Models;
@@ -35,21 +36,23 @@ namespace StarDestroyer.Controllers
         }
 
         [AcceptGet()]
-        public ActionResult List(JQGridRequestModel gridRequest) 
+        public ActionResult List(JQGridRequestModel gridRequest)
         {
-            
+            var searchResult = _productRepository.SearchProducts(new SearchParameters()
+                  {
+                      Ascending = gridRequest.sord == "asc" ? true : false,
+                      Count = gridRequest.rows,
+                      Page = gridRequest.page,
+                      SortColumn = gridRequest.sidx
+                  });
 
             var jsonData = new
-            {
-                total = 1, // we'll implement later 
-                page = gridRequest.page,
-                records = 3, // implement later 
-                rows = new[]{
-                      new {id = 1, cell = new[] {"1", "-7", "Is this a good question?"}},
-                      new {id = 2, cell = new[] {"2", "15", "Is this a blatant ripoff?"}},
-                      new {id = 3, cell = new[] {"3", "23", "Why is the sky blue?"}}
-                    }
-            };
+               {
+                   total = searchResult.Count,
+                   page = gridRequest.page,
+                   records = gridRequest.rows,
+                   rows = (searchResult.Items.Select(x => new { id = x.Id, cell = new string[] { x.Name, x.Price.ToString(), x.InStock.ToString() } }))
+               };
             return Json(jsonData);
         }
 

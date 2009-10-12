@@ -143,7 +143,7 @@ namespace StarDestroyer.Tests.Integration
     public class When_using_the_product_repository_to_search_for_projects : And_setting_up_the_temporary_database
     {
         private ProductRepository _repo;
-        private List<Product> _searchResults;
+        private PagedSearchResult<Product> _searchResults;
 
         protected override void Before_each()
         {

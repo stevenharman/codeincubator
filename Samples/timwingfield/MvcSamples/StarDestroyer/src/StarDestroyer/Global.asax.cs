@@ -15,6 +15,8 @@ namespace StarDestroyer
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{*favicon}", new {favicon = "(.*/)?favicon.ico(/.*)?"});
+            routes.IgnoreRoute("favicon.ico/{*pathInfo}");
             routes.IgnoreRoute("{resource}.aspx/{*pathInfo}");
 
             routes.MapRoute(

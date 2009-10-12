@@ -13,19 +13,19 @@
                 url: '/Product/List/',
                 datatype: 'json',
                 mtype: 'GET',
-                colNames: ['Id', 'Votes', 'Title'],
+                colNames: ['Name', 'Price', 'In Stock?'],
                 colModel: [
-          { name: 'Id', index: 'Id', width: 40, align: 'left' },
-          { name: 'Votes', index: 'Votes', width: 40, align: 'left' },
-          { name: 'Title', index: 'Title', width: 200, align: 'left'}],
+          { name: 'Name', index: 'Name', width: 300, align: 'left' },
+          { name: 'Price', index: 'Price', width: 40, align: 'left' },
+          { name: 'InStock', index: 'InStock', width: 100, align: 'left'}],
                 pager: jQuery('#pager'),
-                rowNum: 10,
+                rowNum: 5,
                 rowList: [5, 10, 20, 50],
-                sortname: 'Id',
-                sortorder: "desc",
+                sortname: 'Name',
+                sortorder: "asc",
                 viewrecords: true,
                 imgpath: '/content/images',
-                caption: 'My first grid'
+                caption: 'Products'
             });
         }); 
 
@@ -36,8 +36,10 @@
     <h2>
         Product Catalog</h2>
     <%= Html.Table("Products", Model, null) %>
-    <table id="list" class="scroll" cellpadding="0" cellspacing="0">
-    </table>
-    <div id="pager" class="scroll" style="text-align: center;">
+    <div id="jQGridExample">
+        <table id="list" class="scroll" cellpadding="0" cellspacing="0">
+        </table>
+        <div id="pager" class="scroll" style="text-align: center;">
+        </div>
     </div>
 </asp:Content>
