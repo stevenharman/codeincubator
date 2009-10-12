@@ -69,6 +69,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\AssaultController.cs" />
+    <Compile Include="Models\JQGridRequestModel.cs" />
     <Compile Include="Models\ProductListingModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Controllers\ProductController.cs" />
