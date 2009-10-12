@@ -103,7 +103,7 @@ namespace StarDestroyer.Core.Services
                                                    Description = "Not your daddy's light saber.",
                                                    InStock = true,
                                                    Name = "Asajj Ventress Force FX Saber",
-                                                   Price = 22.99m,
+                                                   Price = 29.99m,
                                                    ShortName = "ForceFXSaber"
                                                },
                                            new Product()
@@ -111,7 +111,7 @@ namespace StarDestroyer.Core.Services
                                                    Description = "A replica of the original.",
                                                    InStock = true,
                                                    Name = "Anakin Skywalker Lightsaber",
-                                                   Price = 22.99m,
+                                                   Price = 32.99m,
                                                    ShortName = "SkywalkerLightsaber"
                                                },
                                            new Product()
@@ -119,16 +119,32 @@ namespace StarDestroyer.Core.Services
                                                    Description = "The perfect balance of weight and performance.",
                                                    InStock = true,
                                                    Name = "Ahsoka Lightsaber",
-                                                   Price = 22.99m,
+                                                   Price = 12.99m,
                                                    ShortName = "AhsokaLightsaber"
                                                },                                           
                                             new Product()
                                                {
                                                    Description = "Secure your battleship with one of the finest.",
-                                                   InStock = true,
+                                                   InStock = false,
                                                    Name = "Senate Security Clone",
                                                    Price = 22.99m,
                                                    ShortName = "SenateSecurityClone"
+                                               },
+                                            new Product()
+                                               {
+                                                   Description = "Bring in the big guns.",
+                                                   InStock = true,
+                                                   Name = "Alliance Tank Droid",
+                                                   Price = 44.99m,
+                                                   ShortName = "AllianceTankDrois"
+                                               },
+                                            new Product()
+                                               {
+                                                   Description = "Turbo means better!.",
+                                                   InStock = true,
+                                                   Name = "Clone Wars Turbo Tank",
+                                                   Price = 994.99m,
+                                                   ShortName = "CloneWarsTank"
                                                },
                                        };
 
