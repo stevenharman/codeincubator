@@ -27,7 +27,8 @@
                     <%=Html.Encode(item.Type) %>
                 </td>
                 <td>
-                    <a href="javascript: ItemDetail(<%= item.Id %>)">Details</a>
+                    
+                    <a href="/Inventory/AjaxDetails/<%= item.Id %>/">Details</a>
                 </td>
                 <td>
                     <%=Html.ActionLink("Edit", "Edit", new { id = item.Id }) %>
