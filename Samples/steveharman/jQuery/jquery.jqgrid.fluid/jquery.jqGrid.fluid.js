@@ -64,4 +64,4 @@
     }
   }
 })(jQuery);
-$.fn.extend({ fluidGrid : jQuery.jgrid.fluid.fluidGrid });
+jQuery.fn.extend({ fluidGrid : jQuery.jgrid.fluid.fluidGrid });
